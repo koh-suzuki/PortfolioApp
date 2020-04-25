@@ -1,9 +1,11 @@
 <%= render 'shared/flash_messages' %>
-<!--<div class="container-login">-->
-<!--  <div class="button_wrapper">-->
+
 <div class="centering">
-  
-    <%= link_to 'アカウント新規作成', new_user_registration_path, class: 'btn btn-primary btn-lg button' %>    
-  <!--</div> mx-auto.d-block -->
+  <% unless current_user && user_signed_in? %>
+    <%= link_to 'アカウント新規作成', new_user_registration_path, class: 'btn btn-primary btn-lg button' %>
+  <% else %>
+    <%= link_to 'アカウント新規作成', new_user_registration_path, class: 'btn btn-link btn-lg button disabled' %>
+  <% end %>
 </div>
 
+  
