@@ -17,3 +17,8 @@
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets
+
+// フラッシュメッセージ
+$(function(){
+  setTimeout("$('.notice, .alert').fadeOut('slow')", 1000);
+  });

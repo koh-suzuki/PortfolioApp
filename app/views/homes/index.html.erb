@@ -1,11 +1,11 @@
-<%= render 'shared/flash_messages' %>
-
+<div class="w-50"><%= render 'shared/flash_messages' %></div>
+<% provide(:home, 'img') %>
 <div class="container-fluid image">
   <div class="centering">
     <% unless current_user && user_signed_in? %>
-      <%= link_to 'アカウント新規作成', new_user_registration_path, class: 'btn btn-primary btn-lg button' %>
+      <%= link_to 'アカウント新規作成', new_user_registration_path, class: 'btn btn-danger btn-lg button' %>
     <% else %>
-      <%= link_to 'アカウント新規作成', new_user_registration_path, class: 'btn btn-link btn-lg button disabled' %>
+      <%= link_to 'ログイン済みです', new_user_registration_path, class: 'btn btn-link btn-lg button disabled text-white' %>
     <% end %>
   </div>
 </div>
