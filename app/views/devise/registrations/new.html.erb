@@ -1,40 +1,41 @@
-<div class="container-login">
-  <h1><%= t('.sign_up') %></h1>
+<% provide(:home, 'img') %>
+<div class="container-login mt-5">
+  <h1 class="text-white text-center mb-5"><%= t('.sign_up') %></h1>
   
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= bootstrap_devise_error_messages! %>
   
-    <div class="form-group">
-      <%= f.label :email %>
-      <%= f.email_field :email, autofocus: true, autocomplete: 'email', 
-                                                 class: 'form-control',
+    <div class="form-group w-75 mx-auto text-white">
+      <%= f.email_field :email, autofocus: true, placeholder: "Email",
+                                                 autocomplete: 'email', 
+                                                 class: 'form-control form-text',
                                                  required: true,
                                                  maxlength: '30' %>
     </div>
   
-    <div class="form-group">
-      <%= f.label :password %>
+    <div class="form-group w-75 mx-auto text-white">
       <%= f.password_field :password, autocomplete: 'current-password', 
-                                             class: 'form-control',
+                                             placeholder: "Password",
+                                             class: 'form-control form-text',
                                              required: true,
                                              minlength: @minimum_password_length,
                                              maxlength: '30' %>
   
       <% if @minimum_password_length %>
-        <small class="form-text text-muted"><%= t('devise.shared.minimum_password_length', count: @minimum_password_length) %></small>
+        <small class="text-muted text-white"><%= t('devise.shared.minimum_password_length', count: @minimum_password_length) %></small>
       <% end %>
     </div>
   
-    <div class="form-group">
-      <%= f.label :password_confirmation %>
+    <div class="form-group w-75 mx-auto text-white">
       <%= f.password_field :password_confirmation, autocomplete: 'current-password', 
-                                                   class: 'form-control',
+                                                   placeholder: "Password Confirmation",
+                                                   class: 'form-control form-text',
                                                    required: true,
                                                    minlength: @minimum_password_length,
                                                    maxlength: '30' %>
     </div>
   
-    <div class="form-group">
+    <div class="form-group w-75 mx-auto text-white">
       <%= f.submit t('.sign_up'), class: 'btn btn-primary btn-block button' %>
     </div>
   <% end %>

@@ -1,11 +1,20 @@
 @import "bootstrap";
 
-// トップページ
-body{
+// 背景画像（home, login, session/new）
+.img {
+  background-repeat:  no-repeat; 
   background-image: image-url("note_2.jpeg");
   height: 800px;
   background-size:cover;
 }
+
+.form-text{
+  background-color:#ffffffd1;  
+}
+
+
+// トップページ
+
 
 .button_wrapper{
   text-align:center;
@@ -21,6 +30,7 @@ body{
   padding: 8px 20px;
   border-radius: 10px;
   font-size: 16px;
+  opacity: 0.8;
 }
 
 // ログイン画面
@@ -34,26 +44,6 @@ body{
 .ml-12 {
   margin-left: 12%;
 }
-
-
-.btn-login {
-  color: #fff;
-  background-color: #fb8d3fe0;
-  border-color: #fcfeff00;
-}
-    
-.btn-login:hover {
-  opacity: 0.8;
-  color: orange;
-}
-
-.btn-acount {
-    color: #fff;
-    background-color: #3fa5fbc7;
-    border-color: #3fa5fbc7;
-}
-
-
 
 
 .wrapper {
