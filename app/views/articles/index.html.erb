@@ -1,0 +1,20 @@
+<% provide(:home, 'bg-img') %>
+<div class="container">
+  <h1 class="text-center mb-5">Diary</h1>
+  <div>
+    <% @articles.each do |article| %>
+      <%= link_to article_path(article) do %>
+        <div class="posts-index-item mb-3">
+          <div class="col-3">
+            <%= article.created_at.strftime("%d") %>
+             <%= article.created_at.strftime("%A") %>
+          </div>
+          <div class="col-6">
+            <%= article.content.truncate(70) %>
+            <p>更新日：<%= article.updated_at.strftime("%Y年%m月%d日") %></p>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>

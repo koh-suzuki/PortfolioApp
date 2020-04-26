@@ -1,0 +1,18 @@
+<% provide(:home, 'bg-img') %>
+
+<div class="container">
+  <h1 class="text-center mt-3 mb-5"><%= link_to "Diary", articles_path, class: "text-center" %></h1>
+  <div class="row">
+    <div class="col-sm-3 mb-3 diary-day">
+      <p class="text-center display-3"><%= @article.created_at.strftime("%d") %></p>
+      <p class="lead text-center">
+        <%= @article.created_at.strftime("%m") %>
+        <%= @article.created_at.strftime("%B") %>
+      </p>
+    </div>
+    <div class="col-sm-9 mb-3">
+      <p class="posts-show-item h-400"><%= @article.content %></p>
+      <%= link_to "編集", edit_article_path(@article), class: "btn btn-primary" %>
+    </div>
+  </div>
+</div>
