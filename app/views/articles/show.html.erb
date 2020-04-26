@@ -1,13 +1,19 @@
 <% provide(:home, 'bg-img') %>
+
 <div class="container-fluid">
-  <div class="diary-show mt-5">
-    <div class="col-3 posts-show-item">
-      <div class="display-2 text-center"><%= @article.created_at.strftime("%d") %></div>
-      <p class="lead"><%= @article.created_at.strftime("%m") %></p>
-      <p class="lead"><%= @article.created_at.strftime("%B") %></p>
+  <h1 class="text-center mt-5"><%= link_to "Diary", articles_path, class: "text-center" %></h1>
+  <div class="diary-flex mt-5">
+    <div class="col-sm-3 posts-show-item d-flex flex-column">
+      <div class="text-center"><%= @article.created_at.strftime("%d") %></div>
+      <div class="diary-flex mx-auto">
+        <p class="lead">
+          <%= @article.created_at.strftime("%m") %>
+          <%= @article.created_at.strftime("%B") %></p>
+        </div>
     </div>
-    <div class="col-9">
-      <p class="posts-show-item"><%= @article.content %></p>  
+    <div class="col-sm-9">
+      <p class="posts-show-item"><%= @article.content %></p>
+      <%= link_to "編集", edit_article_path(@article), class: "btn btn-primary" %>
     </div>
   </div>
 </div>

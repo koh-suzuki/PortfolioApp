@@ -1,2 +1,11 @@
-<h1>Articles#edit</h1>
-<p>Find me in app/views/articles/edit.html.erb</p>
+<% provide(:home, 'bg-img') %>
+
+<div class="container-fluid">
+  <h1 class="mt-5 mb-4 text-center"><%= link_to "Diary", articles_path %>の編集</h1>
+  <div class="form-group">
+    <%= form_with model: @article,  url: article_path(@article) do |f| %>
+      <%= f.text_area :content, class: "form-control", rows: "30" %>
+      <%= f.submit class: "btn btn-primary btn-block mt-3" %>
+    <% end %>
+  </div>
+</div>
