@@ -3,9 +3,15 @@
 // 背景画像（home, login, session/new）
 .img {
   background-repeat:  no-repeat; 
-  background-image: image-url("note_2.jpeg");
-  height: 800px;
+  background-image: image-url("note_4.jpg");
+  height: 1080px;
   background-size:cover;
+}
+
+@media only screen and (max-width: 767px) {
+  .img {
+    background-image:  image-url("note_4.jpg");
+  }
 }
 
 
@@ -17,9 +23,23 @@
   background-size:cover;
 }
 
-// 投稿一覧
+// diary-page index 投稿一覧
 .posts-index-item {
   padding: 40px 30px;
+  background-color: white;
+  overflow: hidden;
+  box-shadow: 0 2px 6px #c1ced7;
+  display: flex;
+}
+
+
+// diary-page show
+.diary-show {
+  display: flex;
+}
+
+.posts-show-item {
+  padding: 40px 20px;
   background-color: white;
   overflow: hidden;
   box-shadow: 0 2px 6px #c1ced7;

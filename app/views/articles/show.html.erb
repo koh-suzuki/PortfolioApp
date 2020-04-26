@@ -1,2 +1,13 @@
-<h1>Articles#show</h1>
-<p>Find me in app/views/articles/show.html.erb</p>
+<% provide(:home, 'bg-img') %>
+<div class="container-fluid">
+  <div class="diary-show mt-5">
+    <div class="col-3 posts-show-item">
+      <div class="display-2 text-center"><%= @article.created_at.strftime("%d") %></div>
+      <p class="lead"><%= @article.created_at.strftime("%m") %></p>
+      <p class="lead"><%= @article.created_at.strftime("%B") %></p>
+    </div>
+    <div class="col-9">
+      <p class="posts-show-item"><%= @article.content %></p>  
+    </div>
+  </div>
+</div>
