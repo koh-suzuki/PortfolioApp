@@ -5,11 +5,10 @@
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= bootstrap_devise_error_messages! %>
     
-    <div class="form-group w-75 mx-auto text-white">
+    <div class="form-group w-75 mx-auto">
       <%= f.fields_for :profile do |user| %>
-        <%= user.label :name %>
-        <%= user.text_field :name, autofocus: true, placeholder: "Email",
-                                                   autocomplete: 'email', 
+        <%= user.text_field :name, autofocus: true, placeholder: "Name",
+                                                   autocomplete: 'Name', 
                                                    class: 'form-control form-text',
                                                    required: true,
                                                    maxlength: '30' %>
@@ -32,9 +31,10 @@
                                              maxlength: '30' %>
   
       <% if @minimum_password_length %>
-        <small class="text-muted text-white"><%= t('devise.shared.minimum_password_length', count: @minimum_password_length) %></small>
+        <small ><%= t('devise.shared.minimum_password_length', count: @minimum_password_length) %></small>
       <% end %>
     </div>
+  
   
     <div class="form-group w-75 mx-auto text-white">
       <%= f.password_field :password_confirmation, autocomplete: 'current-password', 
@@ -44,7 +44,7 @@
                                                    minlength: @minimum_password_length,
                                                    maxlength: '30' %>
     </div>
-  
+
     <div class="form-group w-75 mx-auto text-white">
       <%= f.submit t('.sign_up'), class: 'btn btn-primary btn-block button' %>
     </div>
