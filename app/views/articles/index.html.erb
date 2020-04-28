@@ -5,6 +5,9 @@
 <div class="container">
   <h1 class="text-center mb-5">Diary</h1>
   <div>
+    <%= paginate @articles, theme: 'twitter-bootstrap-4',
+                            pagination_class: "pagination-md",
+                            nav_class: "d-inline-b mb-4" %>
     <% @articles.each do |article| %>
       <%= link_to article_path(article) do %>
         <div class="posts-index-item mb-3">
@@ -19,5 +22,8 @@
         </div>
       <% end %>
     <% end %>
+    <%= paginate @articles, theme: 'twitter-bootstrap-4',
+                            pagination_class: "pagination-md",
+                            nav_class: "d-inline-b mt-4" %>
   </div>
 </div>

@@ -3,8 +3,9 @@ class ArticlesController < ApplicationController
   before_action :authenticate_user!
   before_action :validte_article, only:[:show, :edit, :update, :destroy]
   
+  PER = 3
   def index
-    @articles = current_user.articles.order(cereated_at: :desc)
+    @articles = current_user.articles.page(params[:page]).per(PER).order(cereated_at: :desc)
   end
 
   def show
