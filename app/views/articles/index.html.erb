@@ -13,7 +13,7 @@
         <div class="posts-index-item mb-3">
           <div class="justify-content-start">
             <div class="list-date">
-              <p class="day text-black"><%= article.created_at.strftime("%d") %></p>
+              <p class="day text-black <%= css_class(article.created_at) %>"><%= article.created_at.strftime("%d") %></p>
               <p class="week <%= css_class(article.created_at) %>">
                 <%= $days_of_the_week[article.created_at.wday] %>
               </p>

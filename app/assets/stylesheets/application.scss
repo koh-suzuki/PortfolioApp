@@ -122,7 +122,13 @@ a .posts-index-item.mb-3:hover {
   text-decoration: none;
 }
 
+
 // diary-page show
+
+.show-width {
+  width: 90%;
+}
+
 .diary-flex {
   display: flex;
 }
@@ -137,9 +143,12 @@ a .posts-index-item.mb-3:hover {
 
 .diary-day {
   background: #ffffff;
-  height: 150px;
+  height: 130px;
   overflow: hidden;
   box-shadow: 0 2px 6px #c1ced7;
+  margin-bottom: 20px;
+  border-left: double 7px #4ec4d3;/*左線*/
+  border-right: double 7px #4ec4d3;/*右線*/
 }
 
 .h-400 {
@@ -158,6 +167,11 @@ a .posts-index-item.mb-3:hover {
   overflow: hidden;
   box-shadow: 0 2px 6px #c1ced7;
 }
+
+.lead {
+  padding: 2px;
+}
+
 
 // フォームテキストの色合い(home, login, session/new)
 .form-text{
@@ -199,7 +213,6 @@ a .posts-index-item.mb-3:hover {
 
 
 .wrapper {
-  // background: linear-gradient(to bottom right, #fd80386e 0%, #f1814c33 100%);
   position: absolute;
   top: 50%;
   left: 0;

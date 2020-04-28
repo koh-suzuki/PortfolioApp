@@ -2,19 +2,27 @@
 <% provide(:home, 'bg-img') %>
 <% provide(:navbar_text, 'black') %>
 
-<div class="container">
+<div class="container-fluid show-width">
   <h1 class="text-center mt-3 mb-5"><%= link_to "Diary", articles_path, class: "text-center" %></h1>
-  <div class="row">
-    <div class="col-sm-3 mb-3 diary-day">
-      <p class="text-center display-3"><%= @article.created_at.strftime("%d") %></p>
-      <p class="lead text-center">
-        <%= @article.created_at.strftime("%m") %>
-        <%= @article.created_at.strftime("%B") %>
+  <div class="row m-auto">
+    <div class="col-sm-2 diary-day">
+      <p class="text-center display-4 mb-0 mt-2 <%= css_class(@article.created_at) %>">
+        <%= @article.created_at.strftime("%d") %>
       </p>
+      <div class="d-flex">
+        <div class="mx-auto d-flex">
+          <p class="lead text-center mb-0">
+            <%= @article.created_at.strftime("%m") %>
+          </p>
+          <p class="lead week <%= css_class(@article.created_at) %>">
+            <%= $days_of_the_week[@article.created_at.wday] %>
+          </p>  
+        </div>
+      </div>
     </div>
-    <div class="col-sm-9 mb-3">
+    <div class="col-sm-10 mb-3">
       <p class="posts-show-item h-400"><%= @article.content %></p>
-      <%= link_to "編集", edit_article_path(@article), class: "btn btn-primary" %>
+      <%= link_to "編集", edit_article_path(@article), class: "btn btn-primary w-25" %>
     </div>
   </div>
 </div>
