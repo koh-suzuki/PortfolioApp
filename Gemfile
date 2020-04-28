@@ -18,6 +18,9 @@ gem 'devise'
 # 日本語化
 gem 'rails-i18n', '~> 5.1'
 gem 'devise-i18n'
+# ページネーション
+gem 'kaminari', '~> 0.17.0'
+gem  'bootstrap4-kaminari-views'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'

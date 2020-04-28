@@ -5,5 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
          
   has_one :profile, dependent: :destroy
-  # delegate :name, to: :profile
+  has_many :articles, dependent: :destroy
+  
+  delegate :name, to: :profile
 end

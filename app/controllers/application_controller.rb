@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
-  # before_action :authenticate_user!, except: [:index]
+  
+  $days_of_the_week = %w{日 月 火 水 木 金 土}
 
   def after_sign_in_path_for(resource)
     root_path # ログイン後に遷移するpathを設定

@@ -1,8 +1,11 @@
 class ArticlesController < ApplicationController
-  before_action :find_article, only:[:show, :edit, :create, :update, :destroy]
+  before_action :find_article, only:[:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
+  before_action :validte_article, only:[:show, :edit, :update, :destroy]
   
+  PER = 3
   def index
-    @articles = Article.order(cereated_at: :desc)
+    @articles = current_user.articles.page(params[:page]).per(PER).order(cereated_at: :desc)
   end
 
   def show
@@ -11,9 +14,10 @@ class ArticlesController < ApplicationController
   def new
     @article = Article.new
   end
-  
+  # 新規投稿はしっかりできたかな？
   def create
-    @article.new(article_params)
+    @article = Article.new(article_params)
+    @article.user_id = current_user.id
     if @article.save
       redirect_to articles_path, notice: "新規投稿しました。"
     else
@@ -45,5 +49,11 @@ class ArticlesController < ApplicationController
     
     def article_params
       params.require(:article).permit(:content)
+    end
+    
+    def validte_article
+      if @article.user_id != current_user.id
+        redirect_to root_path, alert: "閲覧権限がありません"
+      end
     end
 end
