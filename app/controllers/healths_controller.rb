@@ -1,7 +1,6 @@
 class HealthsController < ApplicationController
   before_action :health_find, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
-  # before_action :set_one_month, only: [:index]
 
   def index
     @first_day = Date.current.beginning_of_month
@@ -9,7 +8,7 @@ class HealthsController < ApplicationController
   end
 
   def show
-        
+    
   end
 
   def new

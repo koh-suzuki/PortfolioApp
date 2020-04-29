@@ -16,9 +16,17 @@
 
 
 // 背景色(articles)
-.bg-img {
+.bg-article {
   background-repeat:  no-repeat; 
   background-color: #f1f1f185;
+  height: 800px;
+  background-size:cover;
+}
+
+// 背景色(healths)
+.bg-health {
+  background-repeat:  no-repeat; 
+  background-color: white;
   height: 800px;
   background-size:cover;
 }

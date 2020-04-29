@@ -28,11 +28,11 @@
       </thead>
   
       <tbody>
-        <% (@first_day..@last_day).each do |d| %>
+        <% @healths.each do |h| %>
           <tr>
-            <td class='<%= css_class(d) %>'><%= l(d, format: :short) %></td>
-            <td class='<%= css_class(d) %>'>
-              <%= $days_of_the_week[d.wday] %>
+            <td class='<%= css_class(h.day) %>'><%= l(h.day, format: :short) %></td>
+            <td class='<%= css_class(h.day) %>'>
+              <%= $days_of_the_week[h.day.wday] %>
             </td>
             <td></td>
             <td></td>

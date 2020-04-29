@@ -21,10 +21,10 @@
             </div>
           </li>
           <li class="nav-item">
-            <%= link_to "health一覧", healths_path, class: "nav-link #{yield(:navbar_text)}" %>
+            <%= link_to "Health一覧", user_path(current_user), class: "nav-link #{yield(:navbar_text)}" %>
           </li>
           <li class="nav-item">
-            <%= link_to "health作成", new_health_path, class: "nav-link #{yield(:navbar_text)}" %>
+            <%= link_to "Health", new_health_path, class: "nav-link #{yield(:navbar_text)}" %>
           </li>
           <li class="nav-item">
             <%= link_to "ログイン中：#{current_user.name}", "#", class: "nav-link #{yield(:navbar_text)}" %>
