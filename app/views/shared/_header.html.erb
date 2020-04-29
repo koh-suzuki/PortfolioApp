@@ -8,17 +8,19 @@
 
       <!-- この下の行に mr-auto クラスを付与するだけ -->
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item dropdown">
-         <a class="nav-link dropdown-toggle <%= yield(:navbar_text) %>" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-           日記
-         </a>
-         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-           <%= link_to "日記一覧", articles_path, class: "dropdown-item" %>
-           <%= link_to "日記をつける", new_article_path, class: "dropdown-item" %>
-         <div class="dropdown-divider"></div>
-           <a class="dropdown-item" href="#">Something else here</a>
-         </div>
-        </li>
+        <% if user_signed_in? %>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle <%= yield(:navbar_text) %>" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              日記
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <%= link_to "日記一覧", articles_path, class: "dropdown-item" %>
+              <%= link_to "日記をつける", new_article_path, class: "dropdown-item" %>
+            <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li>
+        <% end %>
         <li class="nav-item">
           <%= link_to "Register", "#", class: "nav-link #{yield(:navbar_text)}" %>
         </li>
