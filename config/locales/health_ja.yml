@@ -1,0 +1,14 @@
+ja:
+  activerecord:
+    models:
+      health: 健康
+    attributes:
+        health:
+          day: 日付
+          bedtime_at: 就寝時間
+          getuptime_at: 起床時間
+          weight: 体重
+          body_fat: 体脂肪
+          bowel_movement: お通じ
+          water: 水分
+          user: ユーザーID
