@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_28_022440) do
+ActiveRecord::Schema.define(version: 2020_04_29_072438) do
 
   create_table "articles", force: :cascade do |t|
     t.string "content"
@@ -18,6 +18,20 @@ ActiveRecord::Schema.define(version: 2020_04_28_022440) do
     t.datetime "updated_at", null: false
     t.integer "user_id"
     t.index ["user_id"], name: "index_articles_on_user_id"
+  end
+
+  create_table "healths", force: :cascade do |t|
+    t.integer "weight"
+    t.integer "body_fat"
+    t.date "day"
+    t.boolean "bowel_movement", null: false
+    t.boolean "water", null: false
+    t.datetime "bedtime_at"
+    t.datetime "getuptime_at"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_healths_on_user_id"
   end
 
   create_table "profiles", force: :cascade do |t|

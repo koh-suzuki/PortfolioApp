@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  weight: 1
+  body_fat: 1
+  day: 2020-04-29
+  bowel_movement: false
+  water: false
+  bedtime_at: 2020-04-29 07:24:38
+  getuptime_at: 2020-04-29 07:24:38
+  user: one
+
+two:
+  weight: 1
+  body_fat: 1
+  day: 2020-04-29
+  bowel_movement: false
+  water: false
+  bedtime_at: 2020-04-29 07:24:38
+  getuptime_at: 2020-04-29 07:24:38
+  user: two

@@ -6,6 +6,7 @@ class User < ApplicationRecord
          
   has_one :profile, dependent: :destroy
   has_many :articles, dependent: :destroy
+  has_many :healths, dependent: :destroy
   
   delegate :name, to: :profile
 end
