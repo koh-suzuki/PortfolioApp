@@ -3,6 +3,8 @@
 <% provide(:navbar_text, 'black') %>
 
 <div class="container">
+<div class="w-50"><%= render 'shared/flash_messages' %></div>
+
   <h1 class="mt-5 mb-5 text-center"><%= link_to "Diary", articles_path %>の編集</h1>
   <div class="form">
     <div class="form-group mb-5">

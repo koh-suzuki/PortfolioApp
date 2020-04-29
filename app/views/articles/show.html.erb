@@ -3,6 +3,8 @@
 <% provide(:navbar_text, 'black') %>
 
 <div class="container-fluid show-width">
+<div class="w-50"><%= render 'shared/flash_messages' %></div>
+
   <h1 class="text-center mt-3 mb-5"><%= link_to "Diary", articles_path, class: "text-center show-title" %></h1>
   <div class="row m-auto">
     <div class="col-sm-2 diary-day">

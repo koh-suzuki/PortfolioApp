@@ -3,6 +3,8 @@
 <% provide(:navbar_text, 'black') %>
 
 <div class="container-fluid">
+<div class="w-50"><%= render 'shared/flash_messages' %></div>
+
   <h1 class="text-center mb-5">Diary</h1>
   <div class="index-div">
     <%= paginate @articles, theme: 'twitter-bootstrap-4',
