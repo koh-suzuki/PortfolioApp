@@ -24,8 +24,8 @@ ActiveRecord::Schema.define(version: 2020_04_29_072438) do
     t.integer "weight"
     t.integer "body_fat"
     t.date "day"
-    t.boolean "bowel_movement", null: false
-    t.boolean "water", null: false
+    t.boolean "bowel_movement", default: false, null: false
+    t.boolean "water", default: false, null: false
     t.datetime "bedtime_at"
     t.datetime "getuptime_at"
     t.integer "user_id"
