@@ -3,10 +3,11 @@
 <% provide(:navbar_text, 'black') %>
 
 <div class="container-fluid show-width">
-  <h1 class="text-center mt-3 mb-5"><%= link_to "Diary", articles_path, class: "text-center" %></h1>
+  <h1 class="text-center mt-3 mb-5"><%= link_to "Diary", articles_path, class: "text-center show-title" %></h1>
   <div class="row m-auto">
     <div class="col-sm-2 diary-day">
-      <p class="text-center display-4 mb-0 mt-2 <%= css_class(@article.created_at) %>">
+      <Hr Align="center" Width="auto" class="line-top">
+      <p class="text-center display-4 mb-0 <%= css_class(@article.created_at) %>">
         <%= @article.created_at.strftime("%d") %>
       </p>
       <div class="d-flex">
@@ -19,10 +20,16 @@
           </p>  
         </div>
       </div>
+      <Hr Align="center" Width="auto" class="line-bottom">
     </div>
     <div class="col-sm-10 mb-3">
-      <p class="posts-show-item h-400"><%= @article.content %></p>
-      <%= link_to "編集", edit_article_path(@article), class: "btn btn-primary w-25" %>
+      <div class="diary-show-item">
+        <p class="diary-show-content h-400"><%= @article.content %></p>
+        <div class="text-center">
+          <%= link_to "編集", edit_article_path(@article), class: "btn diary-edit-button w-50"%>
+          <%= link_to "削除", article_path(@article), method: :delete, class: "btn diary-delete-button w-25" %>
+        </div>
+      </div>
     </div>
   </div>
 </div>

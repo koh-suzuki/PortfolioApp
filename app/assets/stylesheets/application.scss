@@ -18,7 +18,7 @@
 // 背景色(articles)
 .bg-img {
   background-repeat:  no-repeat; 
-  background-color: #f1f1f1;
+  background-color: #f1f1f185;
   height: 800px;
   background-size:cover;
 }
@@ -106,7 +106,7 @@ a.navbar-brand.black:hover {
 .updated_at {
   text-align: right;
   font-size: 11px;
-  margin-bottom: 0;
+  margin-bottom: 10px;
 }
 
 .content {
@@ -114,16 +114,59 @@ a.navbar-brand.black:hover {
   margin-bottom: 0;
 }
 
-a .posts-index-item.mb-3:hover {
-  background: #d3d3d36b;
+.posts-index-item.mb-3:hover {
+  background: #ffffffa3;
 }
 
 .index-div a:hover {
   text-decoration: none;
 }
 
+.diary-edit-button {
+  display: inline-block;
+  padding: 0.3em 1em;
+  color: #0dc641;
+  border: solid 2px #0dc641;
+  border-radius: 3px;
+  transition: .4s;
+}
+
+.diary-edit-button:hover {
+  background: #0dc641;
+  color: white;
+}
+
+.diary-delete-button {
+  display: inline-block;
+  padding: 0.3em 1em;
+  color: #ed3434;
+  border: solid 2px #ed3434;
+  border-radius: 3px;
+  transition: .4s;
+}
+
+.diary-delete-button:hover {
+  background: #ed3434;
+  color: white;
+}
 
 // diary-page show
+.show-title {
+  color: black;
+}
+
+.show-title:hover {
+  color: silver;
+  text-decoration: none;
+}
+
+.line-top {
+  margin-bottom: 0;
+}
+
+.line-bottom {
+  margin-top: 0;
+}
 
 .show-width {
   width: 90%;
@@ -133,12 +176,17 @@ a .posts-index-item.mb-3:hover {
   display: flex;
 }
 
-.posts-show-item {
+.diary-show-item {
   padding: 20px 20px;
   background-color: white;
   overflow: hidden;
   box-shadow: 0 2px 6px #c1ced7;
-  display: flex;
+  margin-bottom: 10px;
+}
+
+.diary-show-content {
+  border: 1px solid lightgray;
+  padding: 10px;
 }
 
 .diary-day {

@@ -23,11 +23,10 @@
             <div>
               <p class="updated_at text-black">更新日時：<%= l article.updated_at, format: :update %></p>
             </div>
-            <div>
+            <div class="text-left">
               <p class="content text-black"><%= article.content.truncate(70) %></p>
             </div>
           </div>
-          
         </div>
       <% end %>
     <% end %>
