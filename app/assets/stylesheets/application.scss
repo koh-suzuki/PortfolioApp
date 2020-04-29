@@ -199,8 +199,9 @@ a.navbar-brand.black:hover {
   border-right: double 7px #4ec4d3;/*右線*/
 }
 
-.h-400 {
+.show-text-area {
   height: 550px;
+  overflow: scroll;
 }
 
 // diary-page edit new
