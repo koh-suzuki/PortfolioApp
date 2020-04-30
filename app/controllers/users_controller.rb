@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :user_find, only: [:show]
+  before_action :user_find, only: [:show, :edit]
   before_action :authenticate_user!
   before_action :correct_user
   before_action :set_one_month, only: [:show]
@@ -10,6 +10,9 @@ class UsersController < ApplicationController
   def show
     @first_day = Date.current.beginning_of_month
     @last_day = @first_day.end_of_month
+  end
+  
+  def edit
   end
   
   private
