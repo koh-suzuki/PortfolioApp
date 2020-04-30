@@ -23,6 +23,8 @@ ActiveRecord::Schema.define(version: 2020_04_29_072438) do
   create_table "healths", force: :cascade do |t|
     t.integer "weight"
     t.integer "body_fat"
+    t.integer "weight_goal"
+    t.integer "body_fat_goal"
     t.date "day"
     t.boolean "bowel_movement", default: false, null: false
     t.boolean "water", default: false, null: false
