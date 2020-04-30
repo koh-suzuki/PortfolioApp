@@ -14,7 +14,7 @@ class ArticlesController < ApplicationController
   def new
     @article = Article.new
   end
-  # 新規投稿はしっかりできたかな？
+
   def create
     @article = Article.new(article_params)
     @article.user_id = current_user.id

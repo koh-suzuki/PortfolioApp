@@ -11,5 +11,6 @@ Rails.application.routes.draw do
   resources :healths
   resources :users do
     get 'healths/show'
+    get 'healths/edit'
   end
 end

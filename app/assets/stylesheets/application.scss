@@ -321,6 +321,62 @@ a.navbar-brand.black:hover {
   }
 }
 
+
+
+// Healthページ
+
 .health-top {
   margin: 30px 0;
+}
+
+.health-graph-item {
+  padding: 10px 10px;
+  background-color: white;
+  overflow: hidden;
+  box-shadow: 0 2px 6px #c1ced7;
+}
+
+.health-body-item {
+  padding: 10px 50px;
+  background-color: white;
+  overflow: hidden;
+  box-shadow: 0 2px 6px #c1ced7;
+}
+
+.user-edit-center{
+  text-align: center;
+}
+
+.present-body {
+  display: flex;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.weight {
+  width: 50%;
+  border: solid black;
+}
+
+.body-fat {
+  width: 50%;
+  border: solid black;
+}
+
+.goal-name {
+  font-size: 12px;
+}
+
+.target p{
+  display: inline-block;
+}
+
+.goal-integer {
+  width: 100px;
+  margin-bottom: 0;
+  text-align: left;
+}
+
+.btn-center {
+  text-align: center;
 }

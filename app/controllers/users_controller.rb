@@ -1,20 +1,27 @@
 class UsersController < ApplicationController
-  before_action :user_find, only: [:show]
+  before_action :user_find, only: [:show, :edit]
+  before_action :health_find, only: [:edit]
   before_action :authenticate_user!
   before_action :correct_user
-  before_action :set_one_month, only: [:show]
+  before_action :set_one_month, only: [:show, :edit]
 
   def index
   end
 
   def show
-    @first_day = Date.current.beginning_of_month
-    @last_day = @first_day.end_of_month
+    
+  end
+  
+  def edit
   end
   
   private
     def user_find
       @user = User.find(params[:id])
+    end
+    
+    def health_find
+      @health = Health.find(params[:id])
     end
     
     def correct_user
