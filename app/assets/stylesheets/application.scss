@@ -307,21 +307,6 @@ a.navbar-brand.black:hover {
 }
 
 
-#table-healths {
-    width: 90%;
-    margin: auto;
-    margin-bottom: 50px;
-  th {
-    vertical-align: middle;
-    text-align: center;
-  }
-  td {
-    vertical-align: middle;
-    text-align: center;
-  }
-}
-
-
 
 // Healthページ
 
@@ -380,3 +365,19 @@ a.navbar-brand.black:hover {
 .btn-center {
   text-align: center;
 }
+
+#table-healths {
+  table-layout: fixed;
+  th {
+    vertical-align: middle;
+    text-align: center;
+  }
+  td {
+    vertical-align: middle;
+    text-align: center;
+  }
+}
+
+
+
+

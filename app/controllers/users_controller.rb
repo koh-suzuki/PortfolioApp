@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :user_find, only: [:show, :edit]
-  before_action :health_find, only: [:edit]
+  before_action :health_find, only: [:edit, :show]
   before_action :authenticate_user!
   before_action :correct_user
   before_action :set_one_month, only: [:show, :edit]

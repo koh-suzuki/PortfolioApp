@@ -2,14 +2,82 @@
 <% provide(:home, '') %>
 <% provide(:navbar_text, 'black') %>
 
-<div class="container-fluid">
-  
-  <h1 class="text-center health-top">Health</h1>
-  <div>
-    <div>
-      
+<div class="container">
+<h1 class="text-center health-top">Health</h1>
+  <div class="row mb-5">
+    <div class="col-md-6">
+      <div class="health-graph-item">
+        <h3 class="user-edit-center"><%= @first_day.strftime("%m月") %></h3>
+        <div>
+          
+        </div>
+      </div>
     </div>
-    
+    <div class="col-md-6">
+      <div class="health-body-item">
+        <table class="table table-bordered">
+          <h3 class="user-edit-center">目標管理</h3>
+          <tr>
+            <td class="weight">
+              <p class="text-left">体重</p>
+              <p class="text-center">
+                <% if @health.weight.present? %>
+                  <%= @health.weight %>
+                <% else %>
+                  -- --
+                <% end %>
+              </p>
+              <p class="text-right">kg</p>
+              </div>
+            </td>
+            <td class="body-fat">
+              <p class="text-left">体脂肪</p>
+            <p class="text-center">
+              <% if @health.body_fat.present? %>
+                <%= @health.body_fat %>
+              <% else %>
+                -- --
+              <% end %>
+            </p>
+            <p class="text-right"> % </p>
+            </td>
+          </tr>
+          <tr class="goal">
+            <td class="weight-goal">
+              <p class="mb-1 goal-name">目標体重</p>
+              <div class="target text-right">
+                <p class="goal-integer">
+                  <% if @health.weight_goal.present? %>
+                    <%= @health.weight_goal %>
+                  <% else %>
+                    -- -- 
+                  <% end %>
+                </p>
+                <p class="mb-0">kg</p>
+              </div>
+            </td>
+            <td class="bodyfat-goal">
+              <p class="mb-1 goal-name">目標体脂肪</p>
+              <div class="target text-right">
+                <p class="goal-integer">
+                  <% if @health.body_fat_goal.present? %>
+                    <%= @health.body_fat_goal %>
+                  <% else %>
+                    -- --
+                  <% end %>
+                </p>
+                <p class="per"> % </p>
+              </div>
+            </td>
+          </tr>
+        </table>
+        <div class="btn-center"><%= link_to "登録", edit_user_health_path(@user), class: "btn btn-lg btn-primary w-50 m-auto" %></div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-12">
     <table class="table table-bordered table-condensed table-hover table-striped" id="table-healths">
       <thead>
         <tr>
@@ -21,7 +89,7 @@
           <th rowspan="2">編集</th>
         </tr>
         <tr>
-          <th >体重</th>
+          <th>体重</th>
           <th>体脂肪</th>
           <th>起床時間</th>
           <th>就寝時間</th>
@@ -50,6 +118,6 @@
         <% end %>
       </tbody>
     </table>
+    </div>
   </div>
 </div>
-  
