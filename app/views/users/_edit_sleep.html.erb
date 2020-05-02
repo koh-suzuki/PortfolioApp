@@ -10,7 +10,12 @@
       <%= f.label :getuptime_at %>
       <%= f.time_field :getuptime_at %>
     </div>
-    <%= f.submit class: "btn btn-primary btn-md" %>
+    <div class="form-group">
+      <%= f.submit "登録", class: "btn-flat-border w-50" %>
+      <button type="button" class="bbtn-cancel-border" data-dismiss="modal">
+        キャンセル
+      </button>
+    </div>
   </form>
   <% end %>
 </div>
