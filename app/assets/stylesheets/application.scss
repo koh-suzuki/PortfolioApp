@@ -348,6 +348,16 @@ a.navbar-brand.black:hover {
   border: solid black;
 }
 
+.goal-mb {
+  margin-bottom: 0;
+}
+
+.goal-font {
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 0;
+}
+
 .goal-name {
   font-size: 12px;
 }
@@ -359,7 +369,8 @@ a.navbar-brand.black:hover {
 .goal-integer {
   width: 100px;
   margin-bottom: 0;
-  text-align: left;
+  text-align: center;
+  font-size: 25px;
 }
 
 .btn-center {
@@ -378,6 +389,82 @@ a.navbar-brand.black:hover {
   }
 }
 
+.modal-guidance {
+  max-width: 1000px;
+}
 
+.btn-circle-flat {
+  display: inline-block;
+  text-decoration: none;
+  background: #87befd;
+  color: #FFF;
+  width: 120px;
+  height: 120px;
+  line-height: 120px;
+  border-radius: 50%;
+  text-align: center;
+  overflow: hidden;
+  transition: .4s;
+}
 
+.btn-circle-flat:hover {
+  background: #668ad8;
+}
 
+.modal-width {
+  max-width: 800px;
+}
+
+.modal-header {
+  .modal-title {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.modal-header .close {
+    padding: 0;
+    margin: 0 ;
+}
+
+.mmodal-sub-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  border-bottom: 1px solid #e9ecef;
+  border-top-left-radius: 0.3rem;
+  border-top-right-radius: 0.3rem;
+}
+
+.modal-sub-title {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 5px 20px;
+  border-bottom: 1px solid #e9ecef;
+  border-top-left-radius: 0.3rem;
+  border-top-right-radius: 0.3rem;
+}
+
+.modal-content {
+  height: 500px;
+}
+
+/* 登録メニュー */
+.d-flex {
+  display: flex;
+}
+
+.btn-body {
+  text-align: center;
+}
+
+.btn-sleep {
+    margin-left: auto;
+    margin-right: 2.5%;
+}
+
+.btn-water {
+    margin-right: auto;
+    margin-left: 2.5%;
+}

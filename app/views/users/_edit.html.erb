@@ -1,0 +1,128 @@
+<div class="modal-dialog modal-lg modal-dialog-center">
+  <div class="modal-dialog modal-guidance">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">登録メニュー</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+      </div>
+      <div class="modal-body">
+        <p>
+          <a data-toggle="modal" href="#edit_goal" class="btn btn-lg btn-outline-dark w-100 m-auto">
+            目標編集
+          </a>
+        </p>
+        <p class="btn-body">
+          <a data-toggle="modal" href="#edit_body" class="btn-circle-flat">
+            体情報
+          </a>
+        </p>
+        <div class="d-flex">
+          <p class="btn-sleep">
+            <a data-toggle="modal" href="#edit_sleep" class="btn-circle-flat">
+              睡眠情報
+            </a>
+          </p>
+          <p class="btn-water">
+            <a data-toggle="modal" href="#edit_water" class="btn-circle-flat">
+              水分
+            </a>
+          </p>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <a href="#" data-dismiss="modal" class="btn">閉じる</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 目標編集 -->
+<div class="modal fade" id="edit_goal">
+  <div class="modal-dialog modal-width">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">目標編集</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+      </div>
+      <div class="modal-body">
+        <%= render 'users/edit_goal' %>
+      </div>
+      <div class="modal-footer">
+        <a href="#" data-dismiss="modal" class="btn">閉じる</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 体情報 -->
+<div class="modal fade" id="edit_body">
+  <div class="modal-dialog modal-width">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">体情報</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+      </div>
+      <div class="modal-body">
+        <%= render 'users/edit_body' %>
+      </div>
+      <div class="modal-footer">
+        <a href="#" data-dismiss="modal" class="btn">閉じる</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 睡眠情報 -->
+<div class="modal fade" id="edit_sleep">
+  <div class="modal-dialog modal-width">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">睡眠情報</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+      </div>
+      <div class="modal-body">
+        <%= render 'users/edit_sleep' %>
+      </div>
+      <div class="modal-footer">
+        <a href="#" data-dismiss="modal" class="btn">閉じる</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 睡眠情報 -->
+<div class="modal fade" id="edit_water">
+  <div class="modal-dialog modal-width">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">水分補給の記録</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+      </div>
+      <div class="modal-sub-header">
+        <h6 class="modal-sub-title">目標水分量：3.0L</h6>
+      </div>
+      <div class="modal-body">
+        <%= render 'users/edit_water' %>
+      </div>
+      <div class="modal-footer">
+        <a href="#" data-dismiss="modal" class="btn">閉じる</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+$(document).ready(function () {
+  $(document).on('show.bs.modal', '.modal', e => {
+    const $currentModal = $(e.currentTarget);
+    var zIndex = 1040 + (10 * $('.modal:visible').length);
+    $currentModal.css('z-index', zIndex);
+    setTimeout(function() {
+      $('.modal-backdrop')
+        .not('.modal-stack')
+        .css('z-index', zIndex - 1)
+        .addClass('modal-stack');
+    }, 0);
+  });
+});
+</script>

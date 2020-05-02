@@ -19,27 +19,27 @@
           <h3 class="user-edit-center">目標管理</h3>
           <tr>
             <td class="weight">
-              <p class="text-left">体重</p>
-              <p class="text-center">
+              <p class="text-left goal-mb">体重</p>
+              <p class="goal-font">
                 <% if @health.weight.present? %>
                   <%= @health.weight %>
                 <% else %>
                   -- --
                 <% end %>
               </p>
-              <p class="text-right">kg</p>
+              <p class="text-right goal-mb">kg</p>
               </div>
             </td>
             <td class="body-fat">
-              <p class="text-left">体脂肪</p>
-            <p class="text-center">
+              <p class="text-left goal-mb">体脂肪</p>
+            <p class="goal-font">
               <% if @health.body_fat.present? %>
                 <%= @health.body_fat %>
               <% else %>
                 -- --
               <% end %>
             </p>
-            <p class="text-right"> % </p>
+            <p class="text-right goal-mb"> % </p>
             </td>
           </tr>
           <tr class="goal">
@@ -71,13 +71,18 @@
             </td>
           </tr>
         </table>
-        <div class="btn-center"><%= link_to "登録", edit_user_health_path(@user), class: "btn btn-lg btn-primary w-50 m-auto" %></div>
+        <div class="btn-center">
+          <%#= link_to "登録", edit_user_path(@user), remote: true, class: "btn btn-lg btn-primary w-50 m-auto" %>
+          <%= link_to "登録", edit_user_path(@user), remote: true, class: "btn btn-lg btn-primary w-50 m-auto" %>
+          <!--<a data-toggle="modal" data-target="#myModal" href="#myModal" class="btn btn-primary">モーダルを開く</a>-->
+          <%#= render 'users/edit' %>
+        </div>
       </div>
     </div>
   </div>
   
   <div class="row">
-    <div class="col-12">
+    <div class="col-md-12">
     <table class="table table-bordered table-condensed table-hover table-striped" id="table-healths">
       <thead>
         <tr>
@@ -85,7 +90,8 @@
           <th rowspan="2">曜日</th>
           <th colspan="2">体情報</th>
           <th colspan="3">睡眠情報</th>
-          <th colspan="2">その他</th>
+          <th rowspan="2">水分</th>
+          <th rowspan="2">お通じ</th>
           <th rowspan="2">編集</th>
         </tr>
         <tr>
@@ -94,25 +100,43 @@
           <th>起床時間</th>
           <th>就寝時間</th>
           <th>睡眠時間</th>
-          <th>お通じ</th>
-          <th>水分</th>
         </tr>
       </thead>
   
       <tbody>
         <% @healths.each do |h| %>
           <tr>
+            <!-- 日付 -->
             <td class='<%= css_class(h.day) %>'><%= l(h.day, format: :short) %></td>
+            <!-- 曜日 -->
             <td class='<%= css_class(h.day) %>'>
               <%= $days_of_the_week[h.day.wday] %>
             </td>
+            <!-- 体重 -->
+            <td>
+              <% if h.weight.present? %>
+                <%= h.weight %>
+                <%= 'kg' %>
+              <% end %>
+            </td>
+            <!-- 体脂肪 -->
+            <td>
+              <% if h.body_fat.present? %>
+                <%= h.body_fat %>
+                <%= '%' %>
+              <% end %>
+            </td>
+            <!-- 起床時間 -->
             <td></td>
+            <!-- 就寝時間 -->
             <td></td>
+            <!-- 睡眠時間 -->
             <td></td>
+            <!-- 水分 -->
             <td></td>
+            <!-- お通じ -->
             <td></td>
-            <td></td>
-            <td></td>
+            <!-- 編集 -->
             <td></td>
           </tr>
         <% end %>
@@ -121,3 +145,5 @@
     </div>
   </div>
 </div>
+
+<div id="edit" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true"></div>

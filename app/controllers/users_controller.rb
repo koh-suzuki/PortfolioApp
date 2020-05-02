@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  before_action :user_find, only: [:show, :edit]
-  before_action :health_find, only: [:edit, :show]
+  before_action :user_find, only: [:show, :edit, :test_edit]
+  before_action :health_find, only: [:edit]
   before_action :authenticate_user!
   before_action :correct_user
   before_action :set_one_month, only: [:show, :edit]
@@ -9,10 +9,19 @@ class UsersController < ApplicationController
   end
 
   def show
-    
+    @health = current_user.healths.find_by(day: Date.today)
   end
   
   def edit
+  end
+  
+  def test_edit
+  end
+  
+  def edit_body
+  end
+  
+  def edit_sleep
   end
   
   private

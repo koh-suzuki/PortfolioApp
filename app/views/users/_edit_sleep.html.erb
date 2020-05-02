@@ -1,0 +1,16 @@
+<h1>睡眠情報のBody部分です</h1>
+<div>
+  <%= form_with model: @health do |f| %>
+  <form>
+    <div class="form-group">
+      <%= f.label :bedtime_at %>
+      <%= f.time_field :bedtime_at %>
+    </div>
+    <div class="form-group">
+      <%= f.label :getuptime_at %>
+      <%= f.time_field :getuptime_at %>
+    </div>
+    <%= f.submit class: "btn btn-primary btn-md" %>
+  </form>
+  <% end %>
+</div>
