@@ -10,6 +10,9 @@ Rails.application.routes.draw do
   resources :articles
   resources :healths
   resources :users do
+    member do
+      get 'test_edit'
+    end
     get 'healths/show'
     get 'healths/edit'
     resources :healths, only: [:edit]

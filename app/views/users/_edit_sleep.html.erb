@@ -1,14 +1,14 @@
-<h1>目標編集のBody部分です</h1>
+<h1>睡眠情報のBody部分です</h1>
 <div>
   <%= form_with model: @health do |f| %>
   <form>
     <div class="form-group">
-      <%= f.label :weight_goal %>
-      <%= f.number_field :weight_goal %>
+      <%= f.label :bedtime_at %>
+      <%= f.time_field :bedtime_at %>
     </div>
     <div class="form-group">
-      <%= f.label :body_fat_goal %>
-      <%= f.number_field :body_fat_goal %>
+      <%= f.label :getuptime_at %>
+      <%= f.time_field :getuptime_at %>
     </div>
     <%= f.submit class: "btn btn-primary btn-md" %>
   </form>

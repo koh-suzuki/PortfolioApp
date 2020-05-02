@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :user_find, only: [:show, :edit]
+  before_action :user_find, only: [:show, :edit, :test_edit]
   before_action :health_find, only: [:edit]
   before_action :authenticate_user!
   before_action :correct_user
@@ -13,6 +13,15 @@ class UsersController < ApplicationController
   end
   
   def edit
+  end
+  
+  def test_edit
+  end
+  
+  def edit_body
+  end
+  
+  def edit_sleep
   end
   
   private
