@@ -393,24 +393,6 @@ a.navbar-brand.black:hover {
   max-width: 1000px;
 }
 
-.btn-circle-flat {
-  display: inline-block;
-  text-decoration: none;
-  background: #87befd;
-  color: #FFF;
-  width: 120px;
-  height: 120px;
-  line-height: 120px;
-  border-radius: 50%;
-  text-align: center;
-  overflow: hidden;
-  transition: .4s;
-}
-
-.btn-circle-flat:hover {
-  background: #668ad8;
-}
-
 .modal-width {
   max-width: 800px;
 }
@@ -450,7 +432,12 @@ a.navbar-brand.black:hover {
   height: 500px;
 }
 
+
 /* 登録メニュー */
+.btn-goal {
+  text-align: center;
+}
+
 .d-flex {
   display: flex;
 }
@@ -467,4 +454,77 @@ a.navbar-brand.black:hover {
 .btn-water {
     margin-right: auto;
     margin-left: 2.5%;
+}
+
+.btn-top-radius {
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+  padding: 8px 10px 5px 10px;
+  text-decoration: none;
+  color: #FFA000;
+  background: #fff1da;
+  border-radius: 15px 15px 15px 15px;
+  transition: .4s;
+}
+
+.btn-top-radius:hover {
+  background: #ffc25c;
+  color: #FFF;
+  text-decoration: none;
+}
+
+.btn-circle-flat {
+  display: inline-block;
+  text-decoration: none;
+  background: #67c5ff;
+  color: #FFF;
+  width: 120px;
+  height: 120px;
+  line-height: 120px;
+  border-radius: 50%;
+  text-align: center;
+  overflow: hidden;
+  transition: .4s;
+}
+
+.btn-circle-flat:hover {
+  color: #67c5ff;
+  background: white;
+  text-decoration: none;
+  border: solid 0.5px;
+}
+
+
+/* 登録ボタン */
+.btn-flat-border {
+  display: inline-block;
+  padding: 0.3em 1em;
+  text-decoration: none;
+  color: #67c5ff;
+  border: solid 2px #67c5ff;
+  border-radius: 3px;
+  transition: .4s;
+}
+
+.btn-flat-border:hover {
+  background: #67c5ff;
+  color: white;
+}
+
+
+/* キャンセルボタン */ 
+.bbtn-cancel-border{
+  display: inline-block;
+  padding: 0.3em 1em;
+  text-decoration: none;
+  color: gray;
+  border: solid 2px gray;
+  border-radius: 3px;
+  transition: .4s;
+}
+
+.bbtn-cancel-border:hover {
+  background: gray;
+  color: white;
 }

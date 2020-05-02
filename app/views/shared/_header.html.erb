@@ -24,9 +24,6 @@
             <%= link_to "Health一覧", user_path(current_user), class: "nav-link #{yield(:navbar_text)}" %>
           </li>
           <li class="nav-item">
-            <%= link_to "Health", edit_user_path(current_user), class: "nav-link #{yield(:navbar_text)}" %>
-          </li>
-          <li class="nav-item">
             <%= link_to "ログイン中：#{current_user.name}", "#", class: "nav-link #{yield(:navbar_text)}" %>
           </li>
         <% end %>

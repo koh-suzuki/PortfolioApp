@@ -6,11 +6,6 @@
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
       </div>
       <div class="modal-body">
-        <p>
-          <a data-toggle="modal" href="#edit_goal" class="btn btn-lg btn-outline-dark w-100 m-auto">
-            目標編集
-          </a>
-        </p>
         <p class="btn-body">
           <a data-toggle="modal" href="#edit_body" class="btn-circle-flat">
             体情報
@@ -28,9 +23,11 @@
             </a>
           </p>
         </div>
-      </div>
-      <div class="modal-footer">
-        <a href="#" data-dismiss="modal" class="btn">閉じる</a>
+        <p class="btn-goal">
+          <a data-toggle="modal" href="#edit_goal" class="btn-top-radius w-50">
+            目標編集
+          </a>
+        </p>
       </div>
     </div>
   </div>
@@ -47,9 +44,7 @@
       <div class="modal-body">
         <%= render 'users/edit_goal' %>
       </div>
-      <div class="modal-footer">
-        <a href="#" data-dismiss="modal" class="btn">閉じる</a>
-      </div>
+      
     </div>
   </div>
 </div>
@@ -65,9 +60,6 @@
       <div class="modal-body">
         <%= render 'users/edit_body' %>
       </div>
-      <div class="modal-footer">
-        <a href="#" data-dismiss="modal" class="btn">閉じる</a>
-      </div>
     </div>
   </div>
 </div>
@@ -82,9 +74,6 @@
       </div>
       <div class="modal-body">
         <%= render 'users/edit_sleep' %>
-      </div>
-      <div class="modal-footer">
-        <a href="#" data-dismiss="modal" class="btn">閉じる</a>
       </div>
     </div>
   </div>
@@ -103,9 +92,6 @@
       </div>
       <div class="modal-body">
         <%= render 'users/edit_water' %>
-      </div>
-      <div class="modal-footer">
-        <a href="#" data-dismiss="modal" class="btn">閉じる</a>
       </div>
     </div>
   </div>

@@ -3,7 +3,7 @@ class ArticlesController < ApplicationController
   before_action :authenticate_user!
   before_action :validte_article, only:[:show, :edit, :update, :destroy]
   
-  PER = 3
+  PER = 5
   def index
     @articles = current_user.articles.page(params[:page]).per(PER).order(cereated_at: :desc)
   end

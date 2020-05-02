@@ -1,4 +1,3 @@
-<h4>edit_today</h4>
 <%= form_with model: @health do |f| %>
   <div>
     <form>
@@ -13,6 +12,12 @@
       <div class="form-group">
         <%= f.label :bowel_movement %>
         <%= f.check_box :bowel_movement, {}, "true", "false" %>
+      </div>
+      <div class="form-group">
+        <%= f.submit "登録", class: "btn-flat-border w-50" %>
+        <button type="button" class="bbtn-cancel-border" data-dismiss="modal">
+          キャンセル
+        </button>
       </div>
     </form>
   </div>
