@@ -71,13 +71,18 @@
             </td>
           </tr>
         </table>
-        <div class="btn-center"><%= link_to "登録", edit_user_health_path(@user), class: "btn btn-lg btn-primary w-50 m-auto" %></div>
+        <div class="btn-center">
+          <%#= link_to "登録", edit_user_path(@user), remote: true, class: "btn btn-lg btn-primary w-50 m-auto" %>
+          <%= link_to "登録", edit_user_path(@user), remote: true, class: "btn btn-lg btn-primary w-50 m-auto" %>
+          <!--<a data-toggle="modal" data-target="#myModal" href="#myModal" class="btn btn-primary">モーダルを開く</a>-->
+          <%#= render 'users/edit' %>
+        </div>
       </div>
     </div>
   </div>
   
   <div class="row">
-    <div class="col-12">
+    <div class="col-md-12">
     <table class="table table-bordered table-condensed table-hover table-striped" id="table-healths">
       <thead>
         <tr>
@@ -102,17 +107,37 @@
       <tbody>
         <% @healths.each do |h| %>
           <tr>
+            <!-- 日付 -->
             <td class='<%= css_class(h.day) %>'><%= l(h.day, format: :short) %></td>
+            <!-- 曜日 -->
             <td class='<%= css_class(h.day) %>'>
               <%= $days_of_the_week[h.day.wday] %>
             </td>
+            <!-- 体重 -->
+            <td>
+              <% if h.weight.present? %>
+                <%= h.weight %>
+                <%= 'kg' %>
+              <% end %>
+            </td>
+            <!-- 体脂肪 -->
+            <td>
+              <% if h.body_fat.present? %>
+                <%= h.body_fat %>
+                <%= '%' %>
+              <% end %>
+            </td>
+            <!-- 起床時間 -->
             <td></td>
+            <!-- 就寝時間 -->
             <td></td>
+            <!-- 睡眠時間 -->
             <td></td>
+            <!-- お通じ -->
             <td></td>
+            <!-- 水分 -->
             <td></td>
-            <td></td>
-            <td></td>
+            <!-- 編集 -->
             <td></td>
           </tr>
         <% end %>
@@ -121,3 +146,5 @@
     </div>
   </div>
 </div>
+
+<div id="edit" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true"></div>
