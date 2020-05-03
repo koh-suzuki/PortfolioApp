@@ -1,0 +1,62 @@
+<div class="modal-dialog modal-lg modal-dialog-center">
+  <div class="modal-dialog modal-guidance">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">登録メニュー</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+      </div>
+      <div class="modal-body">
+        <p class="btn-body">
+          <%= link_to "体情報", user_healths_edit_body_path(@user, @health), remote: true, class: "btn-circle-flat" %>
+        </p>
+        <div class="d-flex">
+          <p class="btn-sleep">
+            <%= link_to "睡眠情報", user_healths_edit_sleep_path(@user, @health), remote: true, class: "btn-circle-flat" %>
+          </p>
+          <p class="btn-water">
+            <%= link_to "水分", user_healths_edit_water_path(@user, @health), remote: true, class: "btn-circle-flat" %>
+          </p>
+        </div>
+          <p class="btn-goal">
+            <%= link_to "目標編集", user_healths_edit_goal_path(@user, @health), remote: true, class: "btn-top-radius w-50" %>
+          </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 目標編集 -->
+<div class="modal fade" id="edit_goal" tabindex="-1" role="dialog" aria-hidden="true">
+  <%= render 'healths/edit_goal' %>
+</div>
+
+<!-- 体情報 -->
+<div id="edit_body" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+  <%= render 'healths/edit_body' %>
+</div>
+
+<!-- 睡眠情報 -->
+<div id="edit_sleep" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+  <%= render 'healths/edit_sleep' %>
+</div>
+
+ <!--水分 -->
+<div class="modal fade" id="edit_water" tabindex="-1" role="dialog" aria-hidden="true">
+  <%= render 'healths/edit_water' %>
+</div>
+
+<script>
+$(document).ready(function () {
+  $(document).on('show.bs.modal', '.modal', e => {
+    const $currentModal = $(e.currentTarget);
+    var zIndex = 1040 + (10 * $('.modal:visible').length);
+    $currentModal.css('z-index', zIndex);
+    setTimeout(function() {
+      $('.modal-backdrop')
+        .not('.modal-stack')
+        .css('z-index', zIndex - 1)
+        .addClass('modal-stack');
+    }, 0);
+  });
+});
+</script>

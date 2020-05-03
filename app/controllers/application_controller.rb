@@ -29,10 +29,11 @@ class ApplicationController < ActionController::Base
     redirect_to root_url
   end
   
-  # def user_find
-  #   @user = User.find(params[:id])
-  # end
-  
+  private
+    def user_find
+      @user = User.find(params[:id])
+    end
+    
   # def correct_user
   #   unless current_user.id == @user.id 
   #     redirect_to root_path, alert: "閲覧権限がありません"

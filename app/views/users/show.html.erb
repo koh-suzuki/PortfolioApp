@@ -3,6 +3,7 @@
 <% provide(:navbar_text, 'black') %>
 
 <div class="container">
+<div class="w-50"><%= render 'shared/flash_messages' %></div>
 <h1 class="text-center health-top">Health</h1>
   <div class="row mb-5">
     <div class="col-md-6">
@@ -72,10 +73,7 @@
           </tr>
         </table>
         <div class="btn-center">
-          <%#= link_to "登録", edit_user_path(@user), remote: true, class: "btn btn-lg btn-primary w-50 m-auto" %>
-          <%= link_to "登録", edit_user_path(@user), remote: true, class: "btn btn-lg btn-primary w-50 m-auto" %>
-          <!--<a data-toggle="modal" data-target="#myModal" href="#myModal" class="btn btn-primary">モーダルを開く</a>-->
-          <%#= render 'users/edit' %>
+          <%= link_to "登録", edit_user_health_path(@user.user_id, @health), remote: true, class: "btn btn-lg btn-primary w-50 m-auto" %>
         </div>
       </div>
     </div>
