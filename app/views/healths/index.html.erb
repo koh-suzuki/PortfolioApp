@@ -19,8 +19,8 @@
         <tr>
           <th >体重</th>
           <th>体脂肪</th>
-          <th>起床時間</th>
           <th>就寝時間</th>
+          <th>起床時間</th>
           <th>睡眠時間</th>
           <th>お通じ</th>
           <th>水分</th>
@@ -34,13 +34,21 @@
             <td class='<%= css_class(d) %>'>
               <%= $days_of_the_week[d.wday] %>
             </td>
+            <!-- 体重 -->
+            <td><%= d.weight %></td>
+            <!-- 体脂肪 -->
+            <td><%= d.body_fat %></td>
+            <!-- 起床時間 -->
+            <td><%= d. %></td>
+            <!-- 就寝時間 -->
             <td></td>
+            <!-- 睡眠時間 -->
             <td></td>
+            <!-- お通じ -->
             <td></td>
+            <!-- 水分 -->
             <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <!-- 編集 -->
             <td></td>
           </tr>
         <% end %>

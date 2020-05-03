@@ -95,8 +95,8 @@
         <tr>
           <th>体重</th>
           <th>体脂肪</th>
+          <th>就寝時間(前日)</th>
           <th>起床時間</th>
-          <th>就寝時間</th>
           <th>睡眠時間</th>
         </tr>
       </thead>
@@ -124,18 +124,41 @@
                 <%= '%' %>
               <% end %>
             </td>
-            <!-- 起床時間 -->
-            <td></td>
             <!-- 就寝時間 -->
-            <td></td>
+            <td>
+              <% if h.bedtime_at.present?  %>
+                <%= l(h.bedtime_at, format: :short) %>
+              <% end %>
+            </td>
+            <!-- 起床時間 -->
+            <td>
+              <% if h.getuptime_at.present? %>
+                <%= l(h.getuptime_at, format: :short) %>
+              <% end %>
+            </td>
             <!-- 睡眠時間 -->
-            <td></td>
+            <td><%= %></td>
             <!-- 水分 -->
-            <td></td>
+            <td>
+              <% if h.water == true %>
+                <%= "摂取あり" %>
+              <% end %>
+            </td>
             <!-- お通じ -->
-            <td></td>
+            <td>
+              <% if h.bowel_movement == true %>
+                <%= "あり" %>
+              <% end %>
+            </td>
             <!-- 編集 -->
-            <td></td>
+            <td>
+              <div class="d-flex">
+              <% if h.day <= Date.today %>
+                <%= link_to "編集", "#" %>
+                <%= link_to "削除", "#" %>
+              <% end %>
+              </div>
+            </td>
           </tr>
         <% end %>
       </tbody>
