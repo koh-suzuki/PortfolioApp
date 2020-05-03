@@ -1,0 +1,38 @@
+<div class="modal-dialog modal-width">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">体情報</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+      </div>
+      <div class="modal-body">
+        <%= form_with model: @health, url: user_healths_update_body_path(@user, @health), method: :patch do |f| %>
+          <div>
+            <form>
+              <div class="form-group">
+                <%= f.label :weight %>
+                <%= f.number_field :weight, step: "0.1", class: "form-control", min: 1, max: 150,
+                                                                   autofocus: true,
+                                                                   required: true %>
+              </div>
+              <div class="form-group">
+                <%= f.label :body_fat %>
+                <%= f.number_field :body_fat, step: "0.1", class: "form-control", min: 0, max: 30 %>
+              </div>
+              <div class="form-check">
+                <%= f.label :bowel_movement, class: "form-check-label" %>
+                <%= f.check_box :bowel_movement, {}, true, false %>
+              </div>
+              <div class="form-group">
+                <%= f.submit "登録", class: "btn-flat-border w-50" %>
+                <button type="button" class="bbtn-cancel-border" data-dismiss="modal">
+                  キャンセル
+                </button>
+              </div>
+            </form>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+        
