@@ -5,7 +5,75 @@
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
       </div>
       <div class="modal-body">
-        
+        <%= form_with model: @health, url: user_healths_update_day_path(@user, @health) do |f| %>
+        <table class="table table-bordered table-condensed table-hover table-striped health_day_table" id="table-healths">
+          <thead>
+            <tr>
+              <th rowspan="2">日付</th>
+              <th rowspan="2">曜日</th>
+              <th colspan="2">体情報</th>
+              <th colspan="3">睡眠情報</th>
+              <th rowspan="2">水分</th>
+              <th rowspan="2">お通じ</th>
+            </tr>
+            <tr>
+              <th>体重</th>
+              <th>体脂肪</th>
+              <th>就寝時間(前日)</th>
+              <th>起床時間</th>
+              <th>睡眠時間</th>
+            </tr>
+          </thead>
+      
+          <tbody>
+            <tr>
+              <!-- 日付 -->
+              <td class='<%= css_class(@health.day) %> pr-0 pl-0'><%= l(@health.day, format: :short) %></td>
+              <!-- 曜日 -->
+              <td class='<%= css_class(@health.day) %>'>
+                <%= $days_of_the_week[@health.day.wday] %>
+              </td>
+              <!-- 体重 -->
+              <td>
+                <%= f.number_field :weight, step: "0.1", class: "form-control", min: 1, max: 150,
+                                                                 autofocus: true,
+                                                                 required: true %>
+              </td>
+              <!-- 体脂肪 -->
+              <td>
+                <%= f.number_field :body_fat, step: "0.1", class: "form-control", min: 0, max: 30 %>
+              </td>
+              <!-- 就寝時間 -->
+              <td>
+                <%= f.time_field :bedtime_at, class: "form-control", 
+                                          autofocus: true,
+                                           required: true %>
+              </td>
+              <!-- 起床時間 -->
+              <td>
+                <%= f.time_field :getuptime_at, class: "form-control" %>
+              </td>
+              <!-- 睡眠時間 -->
+              <td>
+                <% if @health.bedtime_at.present? && @health.getuptime_at.present? %>
+                  <%= sleeping_time(@health, @health.bedtime_at, @health.getuptime_at) %>
+                <% end %>
+              </td>
+              <!-- 水分 -->
+              <td>
+                <%= f.check_box :water, {}, true, false %>
+              </td>
+              <!-- お通じ -->
+              <td>
+                <%= f.check_box :bowel_movement, {}, true, false %>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="edit-day-btn">
+          <%= f.submit class: "btn btn-flat-border w-50" %>
+        </div>
+        <% end %>
       </div>
     </div>
   </div>

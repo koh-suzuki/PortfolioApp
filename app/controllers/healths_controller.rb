@@ -78,10 +78,14 @@ class HealthsController < ApplicationController
   end
   
   def edit_day
-    
   end
   
   def update_day
+    if @health.update_attributes!(health_day_params)
+      redirect_to  user_path @user, notice: "更新しました。"
+    else
+      redirect_to user_path @user, alert: "更新に失敗しました。"
+    end
   end
   
   def destroy
@@ -111,5 +115,10 @@ class HealthsController < ApplicationController
 
     def health_goal_params
       params.require(:health).permit(:weight_goal, :body_fat_goal)
+    end
+    
+    def health_day_params
+      params.require(:health).permit(:weight, :body_fat, :bedtime_at, :getuptime_at,
+                                     :bowel_movement, :water)
     end
 end
