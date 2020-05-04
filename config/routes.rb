@@ -18,6 +18,8 @@ Rails.application.routes.draw do
       patch 'healths/:id/update_water', to: 'healths#update_water', as: 'healths_update_water'
       get 'healths/:id/edit_goal', to: 'healths#edit_goal', as: 'healths_edit_goal'
       patch 'healths/:id/update_goal', to: 'healths#update_goal', as: 'healths_update_goal'
+      get 'healths/:id/edit_day', to: 'healths#edit_day', as: 'healths_edit_day'
+      patch 'healths/:id/update_day', to: 'healths#update_day', as: 'healths_update_day'
   end
   resources :articles
 end

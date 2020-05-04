@@ -1,5 +1,11 @@
-<div class="row">
-  <div class="col-12 d-none d-md-block">
+<% provide(:title, '履歴') %>
+<% provide(:home, 'history') %>
+<% provide(:navbar_text, 'black') %>
+
+<div class="container">
+  <div class="w-50"><%= render 'shared/flash_messages' %></div>
+  <h1 class="text-center health-top">履歴</h1>
+  
   <table class="table table-bordered table-condensed table-hover table-striped" id="table-healths">
     <thead>
       <tr>
@@ -19,7 +25,7 @@
         <th>睡眠時間</th>
       </tr>
     </thead>
-
+  
     <tbody>
       <% @healths.each do |h| %>
         <tr>
@@ -86,5 +92,4 @@
       <% end %>
     </tbody>
   </table>
-  </div>
 </div>
