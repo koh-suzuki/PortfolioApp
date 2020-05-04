@@ -1,5 +1,7 @@
 @import "bootstrap";
 
+
+
 // 背景画像（home, login, session/new）
 .img {
   background-repeat:  no-repeat; 
@@ -29,6 +31,12 @@
   background-color: white;
   height: 800px;
   background-size:cover;
+}
+
+// Health履歴
+
+.history {
+  width: fit-content;
 }
 
 // ナビバー色変更
@@ -269,31 +277,31 @@ a.navbar-brand.black:hover {
 }
 
 
-.wrapper {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  width: 100%;
-  height: 400px;
-  margin-top: -200px;
-  overflow: hidden;
+// .wrapper {
+//   position: absolute;
+//   top: 50%;
+//   left: 0;
+//   width: 100%;
+//   height: 400px;
+//   margin-top: -200px;
+//   overflow: hidden;
   
-    position: absolute;
-    top: 50%;
-    left: 0;
-    width: 100%;
-    height: 400px;
-    margin-top: -200px;
-    overflow: hidden;
+//     position: absolute;
+//     top: 50%;
+//     left: 0;
+//     width: 100%;
+//     height: 400px;
+//     margin-top: -200px;
+//     overflow: hidden;
     
-    &.form-success{
-        .container{
-            h1{
-                transform: translateY(85px);
-            }
-        }
-    }
-}
+//     &.form-success{
+//         .container{
+//             h1{
+//                 transform: translateY(85px);
+//             }
+//         }
+//     }
+// }
 
 
 // 「ログインしました」などのフラッシュ用スタイル
@@ -377,8 +385,32 @@ a.navbar-brand.black:hover {
   text-align: center;
 }
 
+// テーブル
+
+* {
+	float: none;
+	position: static;
+}
+ 
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+ 
+// @media screen and (max-width:480px) {
+// 	table {
+// 		min-width: 500px;
+// 	}
+// 	.table_wrap {
+// 		width: 100%;
+// 		overflow-x: scroll;
+// 	}
+// }
+
+
 #table-healths {
-  table-layout: fixed;
+  // table-layout: fixed;
   th {
     vertical-align: middle;
     text-align: center;
@@ -387,6 +419,15 @@ a.navbar-brand.black:hover {
     vertical-align: middle;
     text-align: center;
   }
+}
+
+.col-sm-12 {
+  width: 100%;
+	overflow-x: scroll;
+}
+
+.col-12 {
+  table-layout: fixed;
 }
 
 .modal-guidance {
@@ -505,6 +546,7 @@ a.navbar-brand.black:hover {
   border: solid 2px #67c5ff;
   border-radius: 3px;
   transition: .4s;
+  background-color: white;
 }
 
 .btn-flat-border:hover {
@@ -522,6 +564,7 @@ a.navbar-brand.black:hover {
   border: solid 2px gray;
   border-radius: 3px;
   transition: .4s;
+  background-color: white;
 }
 
 .bbtn-cancel-border:hover {

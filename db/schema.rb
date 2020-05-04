@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_03_043832) do
+ActiveRecord::Schema.define(version: 2020_05_04_025002) do
 
   create_table "articles", force: :cascade do |t|
     t.string "content"
@@ -21,10 +21,10 @@ ActiveRecord::Schema.define(version: 2020_05_03_043832) do
   end
 
   create_table "healths", force: :cascade do |t|
-    t.integer "weight"
-    t.integer "body_fat"
-    t.integer "weight_goal"
-    t.integer "body_fat_goal"
+    t.float "weight"
+    t.float "body_fat"
+    t.float "weight_goal"
+    t.float "body_fat_goal"
     t.date "day"
     t.boolean "bowel_movement", default: false, null: false
     t.boolean "water", default: false, null: false
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 2020_05_03_043832) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "time_check", default: false, null: false
+    t.datetime "sleep_at"
     t.index ["user_id"], name: "index_healths_on_user_id"
   end
 

@@ -1,18 +1,17 @@
 class HealthsController < ApplicationController
   before_action :user_id, only: [:edit, :edit_body, :update_body, :edit_sleep, :update_sleep, 
-                                 :edit_water, :update_water, :edit_goal, :update_goal]
+                                 :edit_water, :update_water, :edit_goal, :update_goal,
+                                 :edit_day, :update_day
+                                 ]
   before_action :health_find, only: [:edit, :update, :destroy, :edit_body, :update_body,
                                      :edit_sleep, :update_sleep, :edit_water, :update_water,
-                                     :edit_goal, :update_goal]
+                                     :edit_goal, :update_goal, :edit_day, :update_day
+                                     ]
   before_action :authenticate_user!
 
   def index
     @first_day = Date.current.beginning_of_month
     @last_day = @first_day.end_of_month
-  end
-
-  def show
-    
   end
 
   def new
@@ -78,6 +77,12 @@ class HealthsController < ApplicationController
     end
   end
   
+  def edit_day
+    
+  end
+  
+  def update_day
+  end
   
   def destroy
   end
