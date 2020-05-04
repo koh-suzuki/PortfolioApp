@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_04_022812) do
+ActiveRecord::Schema.define(version: 2020_05_04_025002) do
 
   create_table "articles", force: :cascade do |t|
     t.string "content"
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 2020_05_04_022812) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "time_check", default: false, null: false
+    t.datetime "sleep_at"
     t.index ["user_id"], name: "index_healths_on_user_id"
   end
 

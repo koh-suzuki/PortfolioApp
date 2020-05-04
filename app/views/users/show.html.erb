@@ -137,7 +137,11 @@
               <% end %>
             </td>
             <!-- 睡眠時間 -->
-            <td><%= %></td>
+            <td>
+              <% if h.bedtime_at.present? && h.getuptime_at.present? %>
+                <%= sleeping_time(h, h.bedtime_at, h.getuptime_at) %>
+              <% end %>
+            </td>
             <!-- 水分 -->
             <td>
               <% if h.water == true %>
