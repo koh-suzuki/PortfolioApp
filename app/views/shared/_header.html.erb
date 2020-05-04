@@ -1,51 +1,53 @@
 <header>
-  <nav class="navbar navbar-expand-lg ">
-    <%= link_to "My Log", root_path, class: "navbar-brand #{yield(:navbar_text)}" %>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon <%= yield(:navbar_text) %>"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-
-      <ul class="navbar-nav mr-auto">
+  <div class='fixed-top'>
+    <nav class="navbar navbar-expand-lg ">
+      <%= link_to "My Log", root_path, class: "navbar-brand #{yield(:navbar_text)}" %>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon <%= yield(:navbar_text) %>"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+  
+        <ul class="navbar-nav mr-auto">
+          <% if user_signed_in? %>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle <%= yield(:navbar_text) %>" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                日記
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <%= link_to "日記一覧", articles_path, class: "dropdown-item" %>
+                <%= link_to "日記をつける", new_article_path, class: "dropdown-item" %>
+              </div>
+            </li>
+            <li class="nav-item">
+              <%= link_to "Health一覧", user_path(current_user), class: "nav-link #{yield(:navbar_text)}" %>
+            </li>
+            <li class="nav-item d-block d-sm-none">
+              <%= link_to "履歴", edit_user_path(current_user), class: "nav-link #{yield(:navbar_text)}" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "ログイン中：#{current_user.name}", "#", class: "nav-link #{yield(:navbar_text)}" %>
+            </li>
+          <% end %>
+        </ul>
+        
+        <ul class="navbar-nav">
         <% if user_signed_in? %>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle <%= yield(:navbar_text) %>" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              日記
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <%= link_to "日記一覧", articles_path, class: "dropdown-item" %>
-              <%= link_to "日記をつける", new_article_path, class: "dropdown-item" %>
-            </div>
+          <li class="nav-item">
+            <%= link_to 'アカウント編集', edit_user_registration_path, class: "nav-link #{yield(:navbar_text)}" %>
           </li>
           <li class="nav-item">
-            <%= link_to "Health一覧", user_path(current_user), class: "nav-link #{yield(:navbar_text)}" %>
+            <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "nav-link #{yield(:navbar_text)}" %>
           </li>
-          <li class="nav-item d-block d-sm-none">
-            <%= link_to "履歴", edit_user_path(current_user), class: "nav-link #{yield(:navbar_text)}" %>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to "アカウント登録", new_user_registration_path, class: "nav-link #{yield(:navbar_text)}" %>
           </li>
           <li class="nav-item">
-            <%= link_to "ログイン中：#{current_user.name}", "#", class: "nav-link #{yield(:navbar_text)}" %>
+            <%= link_to "ログイン", new_user_session_path, class: "nav-link #{yield(:navbar_text)}" %>
           </li>
         <% end %>
-      </ul>
-      
-      <ul class="navbar-nav">
-      <% if user_signed_in? %>
-        <li class="nav-item">
-          <%= link_to 'アカウント編集', edit_user_registration_path, class: "nav-link #{yield(:navbar_text)}" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "nav-link #{yield(:navbar_text)}" %>
-        </li>
-      <% else %>
-        <li class="nav-item">
-          <%= link_to "アカウント登録", new_user_registration_path, class: "nav-link #{yield(:navbar_text)}" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "ログイン", new_user_session_path, class: "nav-link #{yield(:navbar_text)}" %>
-        </li>
-      <% end %>
-      </ul>
-    </div>
-  </nav>
+        </ul>
+      </div>
+    </nav>
+  </div>
 </header>
