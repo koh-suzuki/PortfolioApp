@@ -1,6 +1,8 @@
 class ProfilesController < ApplicationController
   before_action :user_id, only: [:edit, :update]
   before_action :profile_id, only: [:edit, :update]
+  before_action :authenticate_user!
+  before_action :correct_user
   
   def edit
   end

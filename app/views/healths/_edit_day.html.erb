@@ -36,8 +36,7 @@
               <!-- 体重 -->
               <td>
                 <%= f.number_field :weight, step: "0.1", class: "form-control", min: 1, max: 150,
-                                                                 autofocus: true,
-                                                                 required: true %>
+                                                                 autofocus: true %>
               </td>
               <!-- 体脂肪 -->
               <td>
@@ -45,9 +44,7 @@
               </td>
               <!-- 就寝時間 -->
               <td>
-                <%= f.time_field :bedtime_at, class: "form-control", 
-                                          autofocus: true,
-                                           required: true %>
+                <%= f.time_field :bedtime_at, class: "form-control" %>
               </td>
               <!-- 起床時間 -->
               <td>

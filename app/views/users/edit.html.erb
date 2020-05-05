@@ -3,93 +3,110 @@
 <% provide(:navbar_text, 'black') %>
 
 <div class="container">
-  <div class="w-50"><%= render 'shared/flash_messages' %></div>
-  <h1 class="text-center health-top">履歴</h1>
-  
-  <table class="table table-bordered table-condensed table-hover table-striped" id="table-healths">
-    <thead>
-      <tr>
-        <th rowspan="2">日付</th>
-        <th rowspan="2">曜日</th>
-        <th colspan="2">体情報</th>
-        <th colspan="3">睡眠情報</th>
-        <th rowspan="2">水分</th>
-        <th rowspan="2">お通じ</th>
-        <th rowspan="2">編集</th>
-      </tr>
-      <tr>
-        <th>体重</th>
-        <th>体脂肪</th>
-        <th>就寝時間(前日)</th>
-        <th>起床時間</th>
-        <th>睡眠時間</th>
-      </tr>
-    </thead>
-  
-    <tbody>
-      <% @healths.each do |h| %>
+  <!--<div class="table-area">-->
+  <div class="col-12">
+    <div class="w-50"><%= render 'shared/flash_messages' %></div>
+    <h1 class="text-center health-top">履歴</h1>
+    
+    <table class="table table-bordered table-condensed table-hover table-striped" id="table-healths">
+      <thead>
         <tr>
-          <!-- 日付 -->
-          <td class='<%= css_class(h.day) %> pr-0 pl-0'><%= l(h.day, format: :short) %></td>
-          <!-- 曜日 -->
-          <td class='<%= css_class(h.day) %>'>
-            <%= $days_of_the_week[h.day.wday] %>
-          </td>
-          <!-- 体重 -->
-          <td>
-            <% if h.weight.present? %>
-              <%= h.weight %>
-              <%= 'kg' %>
-            <% end %>
-          </td>
-          <!-- 体脂肪 -->
-          <td>
-            <% if h.body_fat.present? %>
-              <%= h.body_fat %>
-              <%= '%' %>
-            <% end %>
-          </td>
-          <!-- 就寝時間 -->
-          <td>
-            <% if h.bedtime_at.present?  %>
-              <%= l(h.bedtime_at, format: :short) %>
-            <% end %>
-          </td>
-          <!-- 起床時間 -->
-          <td>
-            <% if h.getuptime_at.present? %>
-              <%= l(h.getuptime_at, format: :short) %>
-            <% end %>
-          </td>
-          <!-- 睡眠時間 -->
-          <td>
-            <% if h.bedtime_at.present? && h.getuptime_at.present? %>
-              <%= sleeping_time(h, h.bedtime_at, h.getuptime_at) %>
-            <% end %>
-          </td>
-          <!-- 水分 -->
-          <td>
-            <% if h.water == true %>
-              <%= "摂取あり" %>
-            <% end %>
-          </td>
-          <!-- お通じ -->
-          <td>
-            <% if h.bowel_movement == true %>
-              <%= "あり" %>
-            <% end %>
-          </td>
-          <!-- 編集 -->
-          <td>
-            <div>
-            <% if h.day <= Date.today %>
-              <%= link_to "編集", user_healths_edit_day_path(@user.user_id, h.id), remote: true, 
-                                                                                    class: "btn btn-success btn-sm" %>
-            <% end %>
-            </div>
-          </td>
+          <!--<th rowspan="2">日付</th>-->
+          
+          <!--<th rowspan="2">曜日</th>-->
+          
+          <!--<th colspan="2">体情報</th>-->
+          <!--<th>体情報</th>-->
+          <!--<th colspan="3">睡眠情報</th>-->
+          <!--<th>睡眠情報</th>-->
+          <!--<th rowspan="2">水分</th>-->
+          
+          <!--<th rowspan="2">お通じ</th>-->
+          
+          <!--<th rowspan="2">編集</th>-->
+          
         </tr>
-      <% end %>
-    </tbody>
-  </table>
+        <tr>
+          <th>日付</th>
+          <th>曜日</th>
+          <th>体重</th>
+          <th>体脂肪</th>
+          <th>就寝時間(前日)</th>
+          <th>起床時間</th>
+          <th>睡眠時間</th>
+          <th>水分</th>
+          <th>お通じ</th>
+          <th>編集</th>
+        </tr>
+      </thead>
+    
+      <tbody>
+        <% @healths.each do |h| %>
+          <tr>
+            <!-- 日付 -->
+            <td class='<%= css_class(h.day) %> pr-0 pl-0'><%= l(h.day, format: :short) %></td>
+            <!-- 曜日 -->
+            <td class='<%= css_class(h.day) %>'>
+              <%= $days_of_the_week[h.day.wday] %>
+            </td>
+            <!-- 体重 -->
+            <td>
+              <% if h.weight.present? %>
+                <%= h.weight %>
+                <%= 'kg' %>
+              <% end %>
+            </td>
+            <!-- 体脂肪 -->
+            <td>
+              <% if h.body_fat.present? %>
+                <%= h.body_fat %>
+                <%= '%' %>
+              <% end %>
+            </td>
+            <!-- 就寝時間 -->
+            <td>
+              <% if h.bedtime_at.present?  %>
+                <%= l(h.bedtime_at, format: :short) %>
+              <% end %>
+            </td>
+            <!-- 起床時間 -->
+            <td>
+              <% if h.getuptime_at.present? %>
+                <%= l(h.getuptime_at, format: :short) %>
+              <% end %>
+            </td>
+            <!-- 睡眠時間 -->
+            <td>
+              <% if h.bedtime_at.present? && h.getuptime_at.present? %>
+                <%= sleeping_time(h, h.bedtime_at, h.getuptime_at) %>
+              <% end %>
+            </td>
+            <!-- 水分 -->
+            <td>
+              <% if h.water == true %>
+                <%= "摂取あり" %>
+              <% end %>
+            </td>
+            <!-- お通じ -->
+            <td>
+              <% if h.bowel_movement == true %>
+                <%= "あり" %>
+              <% end %>
+            </td>
+            <!-- 編集 -->
+            <td>
+              <div>
+              <% if h.day <= Date.today %>
+                <%= link_to "編集", user_healths_edit_day_path(@user.user_id, h.id), remote: true, 
+                                                                                      class: "btn btn-success btn-sm" %>
+              <% end %>
+              </div>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 </div>
+
+<div id="edit_day" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true"></div>

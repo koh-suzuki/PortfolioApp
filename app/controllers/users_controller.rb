@@ -12,18 +12,14 @@ class UsersController < ApplicationController
     @health = @user.healths.find_by(day: Date.today)
     @user = Health.find_by(user_id: current_user.id)
     @profile = Profile.find_by(user_id: current_user.id)
+    @healths.each do |health|
+      @data = [["#{health.day}", "#{health.weight}"]]
+      @user_data= @healths.where.not(weight: nil)
+    end
   end
   
   def edit
     @health = @user.healths.find_by(day: Date.today)
     @user = Health.find_by(user_id: current_user.id)
   end
-  
-  private
-    
-    def correct_user
-      unless current_user.id == @user.id 
-        redirect_to root_path, alert: "閲覧権限がありません"
-      end
-    end
 end

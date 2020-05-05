@@ -17,6 +17,8 @@
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets
+//= require chartkick
+//= require Chart.bundle
 
 // フラッシュメッセージ
 $(function(){

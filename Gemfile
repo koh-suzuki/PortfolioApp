@@ -21,6 +21,8 @@ gem 'devise-i18n'
 # ページネーション
 gem 'kaminari', '~> 0.17.0'
 gem  'bootstrap4-kaminari-views'
+# グラフ
+gem "chartkick"
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'

@@ -11,7 +11,8 @@
       <div class="health-graph-item">
         <h3 class="user-edit-center"><%= @first_day.strftime("%m月") %></h3>
         <div>
-          
+          <%= line_chart @user_data.pluck(:day, :weight) %>
+          <!--Health.pluck(:day, :weight)-->
         </div>
       </div>
     </div>
