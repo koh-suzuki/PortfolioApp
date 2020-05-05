@@ -9,4 +9,12 @@ class User < ApplicationRecord
   has_many :healths, dependent: :destroy
   
   delegate :name, to: :profile
+  
+  # healthsの中から各weight情報を取り出す
+  # 主にグラフに使います。
+  def self.weight
+    @healths.each do |health|
+      @weight = health.weight
+    end
+  end
 end
