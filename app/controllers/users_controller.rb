@@ -11,6 +11,7 @@ class UsersController < ApplicationController
   def show
     @health = @user.healths.find_by(day: Date.today)
     @user = Health.find_by(user_id: current_user.id)
+    @profile = Profile.find_by(user_id: current_user.id)
   end
   
   def edit

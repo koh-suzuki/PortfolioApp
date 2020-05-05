@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  get 'profiles/edit'
   get 'users/index'
   get 'users/show'
   root 'homes#index'
@@ -9,6 +10,7 @@ Rails.application.routes.draw do
   }
 
   resources :users do
+    resources :profiles, only: [:edit, :update]
     resources :healths
       get 'healths/:id/edit_body', to: 'healths#edit_body', as: 'healths_edit_body'
       patch 'healths/:id/update_body', to: 'healths#update_body', as: 'healths_update_body'

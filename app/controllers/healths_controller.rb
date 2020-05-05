@@ -27,6 +27,7 @@ class HealthsController < ApplicationController
   end
 
   def edit
+    @profile = Profile.find_by(user_id: current_user.id)
   end
   
   def update
@@ -71,9 +72,9 @@ class HealthsController < ApplicationController
   
   def update_goal
     if @health.update(health_goal_params)
-      redirect_to  user_path @user, notice: "水分情報を登録しました。"
+      redirect_to  user_path @user, notice: "目標情報を登録しました。"
     else
-      render :edit_goal, alert: "水分情報の登録に失敗しました。"
+      render :edit_goal, alert: "目標情報の登録に失敗しました。"
     end
   end
   

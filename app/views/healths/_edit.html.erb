@@ -18,7 +18,7 @@
           </p>
         </div>
           <p class="btn-goal">
-            <%= link_to "目標編集", user_healths_edit_goal_path(@user, @health), remote: true, class: "btn-top-radius w-50" %>
+            <%= link_to "目標編集", edit_user_profile_path(@user, @profile), remote: true, class: "btn-top-radius w-50" %>
           </p>
       </div>
     </div>
@@ -26,8 +26,8 @@
 </div>
 
 <!-- 目標編集 -->
-<div class="modal fade" id="edit_goal" tabindex="-1" role="dialog" aria-hidden="true">
-  <%= render 'healths/edit_goal' %>
+<div class="modal fade" id="profile_edit" tabindex="-1" role="dialog" aria-hidden="true">
+  <%= render 'profiles/edit' %>
 </div>
 
 <!-- 体情報 -->
