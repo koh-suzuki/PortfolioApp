@@ -10,11 +10,11 @@ class User < ApplicationRecord
   
   delegate :name, to: :profile
   
-  # healthsの中から各weight情報を取り出す
-  # 主にグラフに使います。
-  def self.weight
-    @healths.each do |health|
-      @weight = health.weight
-    end
-  end
+  # # healthsの中から各weight情報を取り出す
+  # # 主にグラフに使います。
+  # def self.weight
+  #   @user_data.each do |u|
+  #     @weight = u.weight
+  #   end
+  # end
 end

@@ -2,7 +2,7 @@
 <% provide(:home, '') %>
 <% provide(:navbar_text, 'black') %>
 
-<!--<div class="container">-->
+<div class="container">
   <div class="w-50"><%= render 'shared/flash_messages' %></div>
 <div class="container">
   <h1 class="text-center health-top">Health</h1>
@@ -12,7 +12,7 @@
         <h3 class="user-edit-center"><%= @first_day.strftime("%m月") %></h3>
         <div>
           <% if @user_data.present? %>
-            <%= line_chart @user_data.pluck(:day, :weight) %>
+            <%= line_chart @user_data.pluck(:day, :weight), min: @min, max: @max %>
           <% else %>
             <%= line_chart @healths.pluck(:day, :weight) %>
           <% end %>
