@@ -23,6 +23,8 @@ gem 'kaminari', '~> 0.17.0'
 gem  'bootstrap4-kaminari-views'
 # グラフ
 gem "chartkick"
+# font-awesome
+gem 'font-awesome-sass', '~> 5.4.1'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'

@@ -11,17 +11,19 @@ class ApplicationController < ActionController::Base
   end
   
   def set_one_month 
-    @first_day = Date.current.beginning_of_month
+    @first_day = params[:date].nil? ?
+    Date.current.beginning_of_month : params[:date].to_date
     @last_day = @first_day.end_of_month
     one_month = [*@first_day..@last_day] # 対象の月の日数を代入します。
     # ユーザーに紐付く一ヶ月分のレコードを検索し取得します。
-    @healths = @user.healths.where(day: @first_day..@last_day)
+    @healths = @user.healths.where(day: @first_day..@last_day).order(:day)
 
     unless one_month.count == @healths.count # それぞれの件数（日数）が一致するか評価します。
       ActiveRecord::Base.transaction do # トランザクションを開始します。
         # 繰り返し処理により、1ヶ月分の勤怠データを生成します。
         one_month.each { |day| @user.healths.create!(day: day) }
       end
+      @healths = @user.healths.where(day: @first_day..@last_day).order(:day)
     end
 
   rescue ActiveRecord::RecordInvalid # トランザクションによるエラーの分岐です。

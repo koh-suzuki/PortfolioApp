@@ -1,5 +1,6 @@
 @import "bootstrap";
-
+@import 'font-awesome-sprockets';
+@import 'font-awesome';
 
 body {
   margin-top: 60px;
@@ -570,4 +571,29 @@ white-space: normal;
 .edit-day-btn {
   margin-top: 40px;
   text-align: center;
+}
+
+
+/* font awesam */ 
+// 一覧テーブルの編集
+.font-edit {
+  font-size: 25px;
+  color: yellowgreen;
+}
+
+a.font-edit:hover {
+  color: yellowgreen;
+  opacity: 0.5;
+}
+
+// グラフの前月・翌月
+.month {
+  margin: 10px;
+  color: black;
+}
+
+a.month:hover {
+    opacity: 0.5;
+    color: black;
+    text-decoration: none;
 }

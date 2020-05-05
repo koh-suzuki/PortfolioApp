@@ -9,10 +9,20 @@
   <div class="row mb-5">
     <div class="col-sm-12 col-md-6 col-lg-7">
       <div class="health-graph-item">
-        <h3 class="user-edit-center"><%= @first_day.strftime("%m月") %></h3>
+        <h3 class="user-edit-center">
+          <%= link_to user_path(date: @first_day.prev_month), class: "month" do %>
+            <%= icon("fa", "arrow-left") %>
+          <% end %>
+          <%= @first_day.strftime("%m月") %>
+          <%= link_to user_path(date: @first_day.next_month), class: "month" do %>
+            <%= icon("fa", "arrow-right") %>
+          <% end %>
+        </h3>
         <div>
           <% if @user_data.present? %>
-            <%= line_chart @user_data.pluck(:day, :weight), min: @min, max: @max %>
+            <%= line_chart @user_data.pluck(:day, :weight), min: @min, 
+                                                            max: @max, 
+                                                            curve: false %>
           <% else %>
             <%= line_chart @healths.pluck(:day, :weight) %>
           <% end %>
@@ -162,10 +172,11 @@
             </td>
             <!-- 編集 -->
             <td>
-              <div>
+              <div class="font-edit">
               <% if h.day <= Date.today %>
-                <%= link_to "編集", user_healths_edit_day_path(@user.user_id, h.id), remote: true, 
-                                                                                      class: "btn btn-success btn-sm" %>
+                <%= link_to user_healths_edit_day_path(@user.user_id, h.id), remote: true, class: "font-edit" do %> 
+                  <%= icon('fa','edit') %>
+                <% end %>
               <% end %>
               </div>
             </td>
