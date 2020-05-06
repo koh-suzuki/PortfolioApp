@@ -23,9 +23,11 @@ class HealthsController < ApplicationController
   
   def update_body
     if @health.update(health_body_params)
-      redirect_to  user_path @user, notice: "体情報を登録しました。"
+      flash[:notice] = "体情報を登録しました。"
+      redirect_to  user_path @user
     else
-      render :edit_body, alert: "体情報の登録に失敗しました。"
+      flash[:alert] =  "体情報の登録に失敗しました。"
+      render :edit_body
     end
   end
 
@@ -34,9 +36,11 @@ class HealthsController < ApplicationController
   
   def update_sleep
     if @health.update(health_sleep_params)
-      redirect_to  user_path @user, notice: "睡眠情報を登録しました。"
+      flash[:notice] = "睡眠情報を登録しました。"
+      redirect_to  user_path @user
     else
-      render :edit_sleep, alert: "睡眠情報の登録に失敗しました。"
+      flash[:alert] = "睡眠情報の登録に失敗しました。"
+      render :edit_sleep
     end
   end
 
@@ -45,9 +49,11 @@ class HealthsController < ApplicationController
   
   def update_water
     if @health.update(health_water_params)
-      redirect_to  user_path @user, notice: "水分情報を登録しました。"
+      flash[:notice] = "水分情報を登録しました。"
+      redirect_to  user_path @user
     else
-      render :edit_water, alert: "水分情報の登録に失敗しました。"
+      flash[:alert] = "水分情報の登録に失敗しました。"
+      render :edit_water
     end
   end
 
@@ -56,9 +62,11 @@ class HealthsController < ApplicationController
   
   def update_goal
     if @health.update(health_goal_params)
-      redirect_to  user_path @user, notice: "目標情報を登録しました。"
+      flash[:notice] = "目標情報を登録しました。"
+      redirect_to  user_path @user
     else
-      render :edit_goal, alert: "目標情報の登録に失敗しました。"
+      flash[:alert] = "目標情報の登録に失敗しました。"
+      render :edit_goal
     end
   end
   
@@ -67,9 +75,11 @@ class HealthsController < ApplicationController
   
   def update_day
     if @health.update_attributes!(health_day_params)
-      redirect_to  user_path @user, notice: "更新しました。"
+      flash[:notice] = "更新しました。"
+      redirect_to  user_path @user
     else
-      redirect_to user_path @user, alert: "更新に失敗しました。"
+      flash[:alert] = "更新に失敗しました。"
+      redirect_to user_path @user
     end
   end
   
