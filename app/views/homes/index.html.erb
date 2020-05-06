@@ -3,9 +3,12 @@
 
 <% provide(:home, 'img') %>
 <div class="container-fluid image">
-  <div class="centering">
+  <h1 class="home-info">Welcom</h1>
+  <p class="home-info">My Log で毎日の体調を記録して日々のコンディションを整えましょう！</p>
+  <div class="home-center">
     <% unless current_user && user_signed_in? %>
       <%= link_to 'アカウント新規作成', new_user_registration_path, class: 'btn btn-danger btn-lg button' %>
+      <%= link_to "アカウントをお持ちの方", new_user_session_path, class: 'btn-home-login' %>
     <% else %>
       <%= link_to 'ログイン済みです', new_user_registration_path, class: 'btn btn-link btn-lg button disabled text-white' %>
     <% end %>
