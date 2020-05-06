@@ -3,7 +3,6 @@
 <% provide(:navbar_text, 'black') %>
 
 <div class="container-fluid show-width">
-<div class="w-50"><%= render 'shared/flash_messages' %></div>
 
   <h1 class="text-center mt-3 mb-5"><%= link_to "Diary", articles_path, class: "text-center show-title" %></h1>
   <div class="row m-auto">
@@ -26,8 +25,8 @@
     </div>
     <div class="col-sm-10 mb-5">
       <div class="diary-show-item">
-        <p class="diary-show-content show-text-area"><%= @article.content %></p>
-        <div class="text-center">
+        <%= simple_format(@article.content) %>
+        <div class="diary-show-btn">
           <%= link_to "編集", edit_article_path(@article), class: "btn diary-edit-button w-50"%>
           <%= link_to "削除", article_path(@article), method: :delete, 
                                                       data: {confirm: "削除しますか？"},

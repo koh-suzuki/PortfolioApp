@@ -4,6 +4,11 @@
 
 body {
   margin-top: 60px;
+  word-wrap: break-word;
+}
+
+h1 {
+  margin-top: 30px;
 }
 
 // 背景画像（home, login, session/new）
@@ -24,7 +29,8 @@ body {
 // 背景色(articles)
 .bg-article {
   background-repeat:  no-repeat; 
-  background-color: #f1f1f185;
+  // background-color: #f1f1f185;
+  background-color: #fffafa96;
   height: 800px;
   background-size:cover;
 }
@@ -32,7 +38,7 @@ body {
 // 背景色(healths)
 .bg-health {
   background-repeat:  no-repeat; 
-  background-color: white;
+  background-color: #fffafa96;
   height: 800px;
   background-size:cover;
 }
@@ -44,6 +50,10 @@ body {
 }
 
 // ナビバー色変更
+.navbar{
+  background-color: #f0f8ff59;
+}
+
 /* 白 */ 
 .white {
   color: white;
@@ -126,7 +136,7 @@ a.navbar-brand.black:hover {
 .updated_at {
   text-align: right;
   font-size: 11px;
-  margin-bottom: 10px;
+  margin: 5px 10px 10px;
 }
 
 .content {
@@ -204,9 +214,9 @@ a.navbar-brand.black:hover {
   margin-bottom: 10px;
 }
 
-.diary-show-content {
-  border: 1px solid lightgray;
-  padding: 10px;
+.diary-show-btn {
+  margin-top: 40px;
+  text-align: center;
 }
 
 .diary-day {
@@ -219,10 +229,6 @@ a.navbar-brand.black:hover {
   border-right: double 7px #4ec4d3;/*右線*/
 }
 
-.show-text-area {
-  height: 550px;
-  overflow: scroll;
-}
 
 // diary-page edit new
 .form_edit {
