@@ -1,9 +1,9 @@
-<% provide(:title, '日記編集') %>
+<% provide(:title, "#{@article.created_at.strftime("%m/%d")}の日記編集") %>
 <% provide(:home, 'bg-article') %>
 <% provide(:navbar_text, 'black') %>
 
 <div class="container">
-  <h1 class="mt-5 mb-5 text-center"><%= link_to "Diary", articles_path %>の編集</h1>
+  <h1 class="mt-5 mb-5 text-center"><%= link_to "Diary", articles_path, class: "diary-edit-title diary-title" %>の編集</h1>
   <div class="form">
     <div class="form-group mb-5">
       <%= form_with model: @article,  url: article_path(@article.id) do |f| %>

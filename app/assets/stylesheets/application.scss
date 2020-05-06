@@ -139,9 +139,10 @@ a.navbar-brand.black:hover {
   margin: 5px 10px 10px;
 }
 
-.content {
+.diary-index-content {
   text-align: left;
   margin-bottom: 0;
+  color: black;
 }
 
 .posts-index-item.mb-3:hover {
@@ -181,11 +182,11 @@ a.navbar-brand.black:hover {
 }
 
 // diary-page show
-.show-title {
+.diary-title {
   color: black;
 }
 
-.show-title:hover {
+.diary-title:hover {
   color: silver;
   text-decoration: none;
 }

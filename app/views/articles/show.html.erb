@@ -1,10 +1,10 @@
-<% provide(:title, "#{current_user.name}の日記") %>
+<% provide(:title, "#{@article.created_at.strftime("%m/%d")}の日記") %>
 <% provide(:home, 'bg-article') %>
 <% provide(:navbar_text, 'black') %>
 
 <div class="container-fluid show-width">
 
-  <h1 class="text-center mt-3 mb-5"><%= link_to "Diary", articles_path, class: "text-center show-title" %></h1>
+  <h1 class="text-center mt-3 mb-5"><%= link_to "Diary", articles_path, class: "text-center diary-title" %></h1>
   <div class="row m-auto">
     <div class="col-sm-2 diary-day">
       <Hr Align="center" Width="auto" class="line-top">
