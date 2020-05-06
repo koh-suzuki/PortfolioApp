@@ -24,6 +24,8 @@ gem  'bootstrap4-kaminari-views'
 gem "chartkick"
 # font-awesome
 gem 'font-awesome-sass', '~> 5.4.1'
+# googleAPI
+gem 'omniauth-google-oauth2'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
@@ -64,9 +66,9 @@ group :test do
   gem 'chromedriver-helper'
 end
 
-group :production do
-  gem 'pg', '0.20.0'
-end
+# group :production do
+#   gem 'pg', '0.20.0'
+# end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
