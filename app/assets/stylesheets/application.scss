@@ -14,6 +14,8 @@ h1 {
   font-family: serif;
 }
 
+
+
 // 背景画像（home, login, session/new）
 .img {
   background-repeat:  no-repeat; 
@@ -28,6 +30,14 @@ h1 {
   }
 }
 
+@media only screen and (max-width: 750px) {
+  h1.home-info {
+    margin-top: 50%;
+  }
+  p.home-info {
+    font-size: 17px;
+  }
+}
 
 // 背景色(articles)
 .bg-article {
@@ -265,10 +275,33 @@ a.navbar-brand.black:hover {
   text-align:center;
 }
 
-.centering {
-  display: flex;
+.home-center {
+  display: grid;
   justify-content: center;
+  margin-top: 10%;
+}
+
+.home-info {
+  text-align: center;
+  color: white;
+}
+
+h1.home-info {
   margin-top: 20%;
+}
+
+.btn-home-login {
+  color: white;
+  border-bottom: double;
+  margin-top: 10px;
+  font-size: 14px;
+  text-align: center;
+}
+
+a.btn-home-login:hover {
+  color: white;
+  opacity: 0.5;
+  text-decoration: none;
 }
 
 .button {
