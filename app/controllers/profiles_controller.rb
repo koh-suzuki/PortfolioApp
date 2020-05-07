@@ -9,9 +9,11 @@ class ProfilesController < ApplicationController
   
   def update
     if @profile.update(profile_goal_params)
-      redirect_to  user_path @user, notice: "目標情報を登録しました。"
+      flash[:notice] = "目標情報を登録しました。"
+      redirect_to  user_path @user
     else
-      render :edit, alert: "目標情報の登録に失敗しました。"
+      flash[:alert] = "目標情報の登録に失敗しました。"
+      render :edit
     end
   end
   
