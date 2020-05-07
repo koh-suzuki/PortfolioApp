@@ -15,7 +15,7 @@ class UsersController < ApplicationController
     @user_data = @healths.where.not(weight: nil)
     
     weights = @healths.pluck(:weight)
-    if weights.all?(&:nil?)
+    unless weights.all?(&:nil?)
       @min = weights.compact.min - 10
       @max = weights.compact.max + 10
     end

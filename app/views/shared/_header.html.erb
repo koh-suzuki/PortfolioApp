@@ -11,15 +11,15 @@
           <% if user_signed_in? %>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle <%= yield(:navbar_text) %>" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                日記
+                Diary
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <%= link_to "日記一覧", articles_path, class: "dropdown-item" %>
-                <%= link_to "日記をつける", new_article_path, class: "dropdown-item" %>
+                <%= link_to "Diary", articles_path, class: "dropdown-item" %>
+                <%= link_to "New Diary", new_article_path, class: "dropdown-item" %>
               </div>
             </li>
             <li class="nav-item">
-              <%= link_to "Health一覧", user_path(current_user), class: "nav-link #{yield(:navbar_text)}" %>
+              <%= link_to "Health", user_path(current_user), class: "nav-link #{yield(:navbar_text)}" %>
             </li>
             <li class="nav-item d-block d-sm-none">
               <%= link_to "履歴", edit_user_path(current_user), class: "nav-link #{yield(:navbar_text)}" %>
