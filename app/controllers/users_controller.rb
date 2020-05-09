@@ -17,6 +17,7 @@ class UsersController < ApplicationController
       @profile = Profile.new
       @profile.user_id = current_user.id
       @profile.save
+      logger.debug @profile.errors.inspect
     end
     @user_data = @healths.where.not(weight: nil)
     weights = @healths.pluck(:weight)
