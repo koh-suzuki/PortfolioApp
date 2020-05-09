@@ -6,33 +6,36 @@
 
   <h1 class="text-center mb-5">Diary</h1>
   <div class="index-div">
-    <%= paginate @articles, theme: 'twitter-bootstrap-4',
-                            pagination_class: "pagination-md",
-                            nav_class: "d-inline-b mb-4" %>
-    <% @articles.each do |article| %>
-      <%= link_to article_path(article) do %>
-        <div class="posts-index-item mb-3">
-          <div class="justify-content-start">
-            <div class="list-date">
-              <p class="day text-black <%= css_class(article.created_at) %>"><%= article.created_at.strftime("%d") %></p>
-              <p class="week <%= css_class(article.created_at) %>">
-                <%= $days_of_the_week[article.created_at.wday] %>
-              </p>
+    <% if @articles.present? %>
+      <%= paginate @articles, theme: 'twitter-bootstrap-4',
+                              pagination_class: "pagination-md",
+                              nav_class: "d-inline-b mb-4" %>
+        <% @articles.each do |article| %>
+          <%= link_to article_path(article) do %>
+            <div class="posts-index-item mb-3">
+              <div class="justify-content-start">
+                <div class="list-date">
+                  <p class="day text-black <%= css_class(article.created_at) %>"><%= article.created_at.strftime("%d") %></p>
+                  <p class="week <%= css_class(article.created_at) %>">
+                    <%= $days_of_the_week[article.created_at.wday] %>
+                  </p>
+                </div>
+              </div>
+              <div class="d-flex flex-column bd-highlight index-article">
+                <div>
+                  <p class="updated_at text-black">更新日時：<%= l article.updated_at, format: :update %></p>
+                </div>
+                <div class="diary-index-content">
+                  <%= simple_format(article.content.truncate(70)) %>
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="d-flex flex-column bd-highlight index-article">
-            <div>
-              <p class="updated_at text-black">更新日時：<%= l article.updated_at, format: :update %></p>
-            </div>
-            <div class="diary-index-content">
-              <%= simple_format(article.content.truncate(70)) %>
-            </div>
-          </div>
-        </div>
-      <% end %>
+          <% end %>
+        <% end %>
+      <%= paginate @articles, theme: 'twitter-bootstrap-4',
+                              pagination_class: "pagination-md",
+                              nav_class: "d-inline-b mt-4" %>
+
     <% end %>
-    <%= paginate @articles, theme: 'twitter-bootstrap-4',
-                            pagination_class: "pagination-md",
-                            nav_class: "d-inline-b mt-4" %>
   </div>
 </div>
