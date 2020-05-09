@@ -14,9 +14,8 @@ class UsersController < ApplicationController
     @profile = Profile.find_by(user_id: current_user.id)
     # 本番環境でgoogle認証した場合にprofileを生成
     if @profile.blank?
-      @profile = Profile.update(id: current_user.id,
+      @profile = Profile.create(id: current_user.id,
                                user_id: current_user.id)
-      @profile.save
     end
     @user_data = @healths.where.not(weight: nil)
     weights = @healths.pluck(:weight)
