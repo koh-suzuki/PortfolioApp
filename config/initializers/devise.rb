@@ -260,7 +260,7 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
-  config.omniauth :google_oauth2,Rails.application.credentials.aws[:GOOGLE_CLIENT_ID],Rails.application.credentials.aws[:GOOGLE_CLIENT_SECRET], scope: 'email', redirect_uri: "#{ENV['HOST']}/users/auth/google_oauth2/callback"
+  config.omniauth :google_oauth2,'1012307982571-p0ktfnetdtqa4rmjv0ghlc1iphvcep68.apps.googleusercontent.com','NakH57NQDVI7ovZKDree3Xhi', scope: 'email', redirect_uri: "https://calm-sea-16660.herokuapp.com/users/auth/google_oauth2/callback"
   # "#{ENV['HOST']}/users/auth/google_oauth2/callback"
   OmniAuth.config.logger = Rails.logger if Rails.env.development? # debug用
 
