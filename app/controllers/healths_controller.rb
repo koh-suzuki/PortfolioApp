@@ -11,6 +11,7 @@ class HealthsController < ApplicationController
 
 
   def edit
+    @profile = Profile.find_by(id: current_user.id)
   end
   
   def update
