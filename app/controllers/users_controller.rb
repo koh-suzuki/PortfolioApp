@@ -15,7 +15,6 @@ class UsersController < ApplicationController
     # 本番環境でgoogle認証した場合にprofileを生成
     if @profile.blank?
       @profile = Profile.new
-      @profile.id = current_user.id
       @profile.user_id = current_user.id
       @profile.save
     end
