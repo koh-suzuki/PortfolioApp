@@ -12,12 +12,6 @@ class UsersController < ApplicationController
     @health = @user.healths.find_by(day: Date.today)
     @user = Health.find_by(user_id: current_user.id)
     @profile = Profile.find_by(user_id: current_user.id)
-    # if @profile.blank?
-    #   @profile = Profile.new
-    #   @profile.id = current_user.id
-    #   @profile.user_id = current_user.id
-    #   @profile.save
-    # end
     @user_data = @healths.where.not(weight: nil)
     weights = @healths.pluck(:weight)
     unless weights.all?(&:nil?)

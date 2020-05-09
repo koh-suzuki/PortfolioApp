@@ -12,6 +12,13 @@ class HealthsController < ApplicationController
 
   def edit
     @profile = Profile.find_by(id: current_user.id)
+    # 本番環境でgoogle認証ログインの場合にプロフィールを作成
+    if @profile.blank?
+      @profile = Profile.new
+      @profile.id = current_user.id
+      @profile.user_id = current_user.id
+      @profile.save
+    end
   end
   
   def update
