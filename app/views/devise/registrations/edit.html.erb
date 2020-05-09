@@ -7,14 +7,23 @@
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
     <%= bootstrap_devise_error_messages! %>
     
+    <div class="form-group w-75 mx-auto">
+      <%= f.fields_for :profile do |user| %>
+        <%= user.label :name, "名前", class: "text-white mb-0" %>
+        <%= user.text_field :name, autofocus: true, placeholder: "Name",
+                                                   autocomplete: 'Name', 
+                                                          class: 'form-control form-text',
+                                                      maxlength: '30' %>
+      <% end %>
+    </div>
+    
     <div class="form-group mx-auto w-75">
       <%= f.label :email, class: "text-white mb-0" %>
-      <%= f.email_field :email, autofocus: true, autocomplete: 'email',
-                                                  placeholder: "Email",
-                                                  class: 'form-control form-text',
-                                                  required: true,
-                                                  minlength: '6',
-                                                  maxlength: '30' %>
+      <%= f.email_field :email, autocomplete: 'email',placeholder: "Email",
+                                                            class: 'form-control form-text',
+                                                         required: true,
+                                                        minlength: '6',
+                                                        maxlength: '30' %>
     </div>
   
     <div class="form-group mx-auto w-75">

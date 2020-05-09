@@ -21,7 +21,10 @@
 
   <%- if devise_mapping.omniauthable? %>
     <%- resource_class.omniauth_providers.each do |provider| %>
-      <%= link_to t('.sign_in_with_provider', provider: OmniAuth::Utils.camelize(provider)), omniauth_authorize_path(resource_name, provider), class: 'btn btn-info button w-75 mt-3' %><br />
+      <%= link_to omniauth_authorize_path(resource_name, provider), class: "btn btn-block btn-social btn-google" do %> 
+        <%= image_tag "btn_google_signin_dark_normal_web@2x.png" %>
+        <%#=OmniAuth::Utils.camelize(provider)%>
+      <% end %><br />
     <% end -%>
   <% end -%>
 </div>
