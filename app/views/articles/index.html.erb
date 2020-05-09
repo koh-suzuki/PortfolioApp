@@ -36,6 +36,11 @@
                               pagination_class: "pagination-md",
                               nav_class: "d-inline-b mt-4" %>
 
+    <% else %>
+      <div class="text-center">
+        <p>日記をつけて未来の自分へメッセージを残しましょう。</p>
+        <%= link_to "New Diary", new_article_path, class: "btn-new-diary" %>
+      </div>
     <% end %>
   </div>
 </div>

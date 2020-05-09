@@ -261,6 +261,22 @@ a.navbar-brand.black:hover {
   padding: 2px;
 }
 
+.btn-new-diary {
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  color: #ff5400;
+  border: dashed 1px #ffa667;
+  background: #fffaf2;
+  border-radius: 3px;
+  transition: .4s;
+}
+
+.btn-new-diary:hover {
+  background: #ff9000;
+  color: #FFF;
+  border-color: #ff9000;
+}
 
 // フォームテキストの色合い(home, login, session/new)
 .form-text{

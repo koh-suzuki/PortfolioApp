@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @health = @user.healths.find_by(day: Date.today)
+    @health = @healths.find_by(day: Date.today)
     @user = Health.find_by(user_id: current_user.id)
     @profile = Profile.find_by(user_id: current_user.id)
     # 本番環境でgoogle認証した場合にprofileを生成
