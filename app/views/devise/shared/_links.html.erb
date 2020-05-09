@@ -1,6 +1,6 @@
 <div class="form-group text-center">
   <%- if controller_name != 'sessions' %>
-    <%= link_to "アカウントをお持ちの方", new_session_path(resource_name), class: 'btn btn-info button w-75' %><br />
+    <%= link_to "アカウントをお持ちの方", new_session_path(resource_name), class: 'btn btn-info button w-75 mb-4' %><br />
   <% end -%>
 
   <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
