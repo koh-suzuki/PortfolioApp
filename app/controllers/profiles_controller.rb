@@ -5,9 +5,7 @@ class ProfilesController < ApplicationController
   before_action :profile_correct_user
   
   def edit
-    if @profile.blank?
-      @profile = Profile.create(id: current_user.id, user_id: current_user.id)
-    end
+    @profile = Profile.create(id: current_user.id, user_id: current_user.id)
   end
   
   def update
