@@ -11,9 +11,6 @@ class HealthsController < ApplicationController
 
 
   def edit
-    if @profile.blank?
-      @profile = Profile.find_by(id: current_user.id, user_id: current_user.id)
-    end
   end
   
   def update
