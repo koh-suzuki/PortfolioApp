@@ -61,10 +61,10 @@
               <p class="mb-1 goal-name">目標体重</p>
               <div class="target text-right">
                 <p class="goal-integer">
-                  <% if @profile.weight_goal.present? %>
-                    <%= @profile.weight_goal %>
-                  <% else %>
+                  <% if @profile.weight_goal.blank? %>
                     -- -- 
+                  <% else %>
+                    <%= @profile.weight_goal %>
                   <% end %>
                 </p>
                 <p class="mb-0">kg</p>
@@ -74,10 +74,10 @@
               <p class="mb-1 goal-name">目標体脂肪</p>
               <div class="target text-right">
                 <p class="goal-integer">
-                  <% if @profile.body_fat_goal.present? %>
-                    <%= @profile.body_fat_goal %>
-                  <% else %>
+                  <% if @profile.body_fat_goal.blank? %>
                     -- --
+                  <% else %>
+                    <%= @profile.body_fat_goal %>
                   <% end %>
                 </p>
                 <p class="per"> % </p>

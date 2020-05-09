@@ -13,7 +13,6 @@ class UsersController < ApplicationController
     @user = Health.find_by(user_id: current_user.id)
     @profile = Profile.find_by(user_id: current_user.id)
     @user_data = @healths.where.not(weight: nil)
-    
     weights = @healths.pluck(:weight)
     unless weights.all?(&:nil?)
       @min = weights.compact.min - 10
