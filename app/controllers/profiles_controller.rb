@@ -5,6 +5,7 @@ class ProfilesController < ApplicationController
   before_action :profile_correct_user
   
   def edit
+    @profile = Profile.find_by(id: @user.user_id)
   end
   
   def update

@@ -5,7 +5,7 @@ class ArticlesController < ApplicationController
   
   PER = 5
   def index
-    @articles = current_user.articles.page(params[:page]).per(PER).order(cereated_at: :desc)
+    @articles = current_user.articles.page(params[:page]).per(PER).order(created_at: :desc)
   end
 
   def show
