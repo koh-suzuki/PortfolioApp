@@ -39,9 +39,10 @@
     </div>
     
     <div class="form-group mx-auto w-75">
-      <% if current_user.@profile.name.blank? %>
-      <% else %>
+      <% if current_user.name.blank? %>
         <%= "名前はありません" %>
+      <% else %>
+        <%= "#{current_user.name}の名前" %>
         <!--<%#= f.label :current_password, class: "text-white mb-0" %>-->
         <!--<%#= f.password_field :current_password, autocomplete: 'current-password',-->
         <!--                                        placeholder: "Current Password",-->
