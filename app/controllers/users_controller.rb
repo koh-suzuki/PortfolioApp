@@ -19,6 +19,7 @@ class UsersController < ApplicationController
       @profile.user_id = current_user.id
       @profile.save
     end
+    puts "================ #{@profile.name} ======================"
     @user_data = @healths.where.not(weight: nil)
     weights = @healths.pluck(:weight)
     unless weights.all?(&:nil?)
