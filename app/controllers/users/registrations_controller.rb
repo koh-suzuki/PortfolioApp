@@ -28,9 +28,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # PUT /resource
-  # def update
-  #   super
-  # end
+  def update
+    super
+    user = User.find_by(id: resource.id)
+    profile = Profile.find_by(id: user.id)
+    profile.update(name: params[:user][:profile][:name])
+  end
 
   # DELETE /resource
   # def destroy
@@ -47,6 +50,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # protected
+  
+  def update_resource(resource, params)
+    if resource.name.blank?  # 名前を持たないユーザーは現在のパスワード確認なし #
+      resource.update_without_password(params)
+    end
+  end
 
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_sign_up_params
@@ -67,4 +76,5 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # def after_inactive_sign_up_path_for(resource)
   #   super(resource)
   # end
+  
 end
