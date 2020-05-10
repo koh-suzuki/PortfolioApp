@@ -39,15 +39,17 @@
     </div>
     
     <div class="form-group mx-auto w-75">
-      <% if current_user.name.present? %>
-        <%= f.label :current_password, class: "text-white mb-0" %>
-        <%= f.password_field :current_password, autocomplete: 'current-password',
-                                                placeholder: "Current Password",
-                                                class: 'form-control form-text',
-                                                required: true,
-                                                minlength: '6',
-                                                maxlength: '30' %>
-        <small class="text-white"><%= t('.we_need_your_current_password_to_confirm_your_changes') %></small>
+      <% if current_user.@profile.name.blank? %>
+      <% else %>
+        <% "名前はありません" %>
+        <!--<%= f.label :current_password, class: "text-white mb-0" %>-->
+        <!--<%= f.password_field :current_password, autocomplete: 'current-password',-->
+        <!--                                        placeholder: "Current Password",-->
+        <!--                                        class: 'form-control form-text',-->
+        <!--                                        required: true,-->
+        <!--                                        minlength: '6',-->
+        <!--                                        maxlength: '30' %>-->
+        <!--<small class="text-white"><%= t('.we_need_your_current_password_to_confirm_your_changes') %></small>-->
       <% end %>
     </div>
 
