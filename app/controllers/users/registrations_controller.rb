@@ -52,7 +52,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # protected
   
   def update_resource(resource, params)
-    if resource.name.blank?  # 名前を持たないユーザーは現在のパスワード確認なし #
+    if resource.password.blank?  # 名前を持たないユーザーは現在のパスワード確認なし #
       resource.update_without_password(params)
     end
   end

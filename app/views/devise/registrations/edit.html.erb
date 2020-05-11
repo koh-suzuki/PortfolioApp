@@ -40,7 +40,7 @@
     
     <div class="form-group mx-auto w-75">
       <!-- Googleログインの場合、名前・パスワードを持たない為現在のパスワード入力での判別はできない様にしています。 -->
-      <% if current_user.name.present? %>
+      <% if current_user.password.present? %>
         <%= f.label :current_password, class: "text-white mb-0" %>
         <%= f.password_field :current_password, autocomplete: 'current-password',
                                                 placeholder: "Current Password",
