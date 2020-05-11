@@ -25,6 +25,7 @@ class UsersController < ApplicationController
       @min = weights.compact.min - 10
       @max = weights.compact.max + 10
     end
+    puts "======= #{@health} ======="
   end
   
   def edit
