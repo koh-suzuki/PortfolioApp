@@ -26,6 +26,8 @@ gem "chartkick"
 gem 'font-awesome-sass', '~> 5.4.1'
 # googleAPI
 gem 'omniauth-google-oauth2'
+# faker
+gem 'faker'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
